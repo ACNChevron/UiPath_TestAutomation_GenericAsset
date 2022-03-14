@@ -1,10 +1,9 @@
 {
   "name": "TestAutomation_GenericAsset_Dispatcher",
-  "description": "Blank Process",
+  "description": "",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.9.5]",
-    "UiPath.Mail.Activities": "[1.9.6]",
     "UiPath.System.Activities": "[20.10.4]",
     "UiPath.UIAutomation.Activities": "[20.10.10]"
   },
@@ -43,7 +42,7 @@
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "0a855a33-2814-4e2d-99c9-d17a7b7313e6",
+      "uniqueId": "d0cf952f-ce87-464a-baad-3f7b1f3a36b7",
       "input": [],
       "output": []
     }
