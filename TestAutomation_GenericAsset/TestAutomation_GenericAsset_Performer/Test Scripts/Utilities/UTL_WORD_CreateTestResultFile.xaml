@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="in_TestRunID" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1143,1113</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1067,1266</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UTL_WORD_CreateTestResultFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -35,6 +36,7 @@
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>UiPath.Word.Activities</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -57,9 +59,18 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Word</AssemblyReference>
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UTL_WORD_CreateTestResultFile" sap:VirtualizedContainerService.HintSize="552,1008" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UTL_WORD_CreateTestResultFile" sap:VirtualizedContainerService.HintSize="552,1201" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Directory_TestLog" />
       <Variable x:TypeArguments="x:String" Name="Path_TestLog" />
@@ -74,10 +85,10 @@
         <OutArgument x:TypeArguments="x:String">[Directory_TestLog]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">[in_Config("SharedRepository").ToString+"\.testLogs\"+
-in_TransactionItem.SpecificContent("ModuleName").ToString+"\"+
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[in_Config("FolderLocation_LogFiles").ToString+
+in_TransactionItem.SpecificContent("TestModule").ToString+"\"+
 in_TransactionItem.SpecificContent("TestName").ToString+"\"+
-in_TransactionItem.Reference]</InArgument>
+in_TestRunID]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder 'Directory_TestLog'" sap:VirtualizedContainerService.HintSize="510,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Directory_TestLog]" />
@@ -86,10 +97,10 @@ in_TransactionItem.Reference]</InArgument>
         <OutArgument x:TypeArguments="x:String">[Path_TestLog]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[Directory_TestLog+"\Test Log_"+in_TransactionItem.SpecificContent("TestName").ToString+"_"+in_TransactionItem.Reference+".docx"]</InArgument>
+        <InArgument x:TypeArguments="x:String">[Directory_TestLog+"\Test Log_"+in_TransactionItem.SpecificContent("TestName").ToString+"_"+in_TestRunID+".docx"]</InArgument>
       </Assign.Value>
     </Assign>
-    <p:WordApplicationScope DisplayName="Word Application Scope 'Path_TestLog'" FilePath="[Path_TestLog]" sap:VirtualizedContainerService.HintSize="510,593" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+    <p:WordApplicationScope DisplayName="Private: Word Application Scope 'Path_TestLog'" FilePath="[Path_TestLog]" sap:VirtualizedContainerService.HintSize="510,593" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
       <p:WordApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WordDocument">
           <ActivityAction.Argument>
@@ -102,11 +113,13 @@ in_TransactionItem.Reference]</InArgument>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <p:WordAppendText DisplayName="Append Text 'TestName'" sap:VirtualizedContainerService.HintSize="434,104" sap2010:WorkflowViewState.IdRef="WordAppendText_1" NewLine="False" Text="[&quot;Test Name: &quot;+ in_TransactionItem.SpecificContent(&quot;TestName&quot;).ToString]" />
-            <p:WordAppendText DisplayName="Append Text 'ModuleName'" sap:VirtualizedContainerService.HintSize="434,104" sap2010:WorkflowViewState.IdRef="WordAppendText_2" Text="[&quot;Module: &quot;+ in_TransactionItem.SpecificContent(&quot;ModuleName&quot;).ToString]" />
+            <p:WordAppendText DisplayName="Append Text 'TestModule'" sap:VirtualizedContainerService.HintSize="434,104" sap2010:WorkflowViewState.IdRef="WordAppendText_2" Text="[&quot;Test Module: &quot;+ in_TransactionItem.SpecificContent(&quot;TestModule&quot;).ToString]" />
             <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="434,104" sap2010:WorkflowViewState.IdRef="WordAppendText_3" Text="[&quot;Execution Start: &quot;+ DateTime.Now.ToString(&quot;MM-dd-yyyy HH:mm:ss&quot;)]" />
           </Sequence>
         </ActivityAction>
       </p:WordApplicationScope.Body>
     </p:WordApplicationScope>
+    <ui:LogMessage DisplayName="Log Message - Initialized Test Result fIle" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Initialized Test Result fIle&quot;]" />
+    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process - WINWORD" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="WINWORD" />
   </Sequence>
 </Activity>
