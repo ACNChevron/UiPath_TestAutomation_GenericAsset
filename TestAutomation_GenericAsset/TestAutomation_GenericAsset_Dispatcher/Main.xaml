@@ -477,9 +477,15 @@
                       <State.Exit>
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Initialization_ReadExecutionFile workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Initialization_ReadExecutionFile.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_FileName_ExecutionQueue">[QueueReference+".xlsx"]</InArgument>
-                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DataTable_ExecutionQueue">[TransactionData]</OutArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_FileName_ExecutionQueue">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;ExecutionQueue_&quot;+QueueReference+&quot;.xlsx&quot;" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DataTable_ExecutionQueue">
+                              <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="TransactionData" />
+                            </OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </State.Exit>
