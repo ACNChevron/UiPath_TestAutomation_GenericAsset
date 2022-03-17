@@ -1,12 +1,18 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="UTL_PDF_ConvertTestResultFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="UTL_PDF_ConvertTestResultFile_Success" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
   </x:Members>
+  <this:UTL_PDF_ConvertTestResultFile_Success.in_Config>
+    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+  </this:UTL_PDF_ConvertTestResultFile_Success.in_Config>
+  <this:UTL_PDF_ConvertTestResultFile_Success.in_TransactionItem>
+    <InArgument x:TypeArguments="ui:QueueItem" />
+  </this:UTL_PDF_ConvertTestResultFile_Success.in_TransactionItem>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1143,831</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1067,1012</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UTL_PDF_ConvertTestResultFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -35,6 +41,8 @@
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>UiPath.Word.Activities</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -58,9 +66,19 @@
       <AssemblyReference>UiPath.Word</AssemblyReference>
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UTL_PDF_ConvertTestResultFile" sap:VirtualizedContainerService.HintSize="552,750" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UTL_PDF_ConvertTestResultFile_Success" sap:VirtualizedContainerService.HintSize="552,947" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Directory_TestLog" />
       <Variable x:TypeArguments="x:String" Name="Path_TestLog" />
@@ -75,27 +93,28 @@
         <OutArgument x:TypeArguments="x:String">[Directory_TestLog]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">[in_Config("SharedRepository").ToString+"\.testLogs\"+
-in_TransactionItem.SpecificContent("ModuleName").ToString+"\"+
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[in_Config("FolderLocation_LogFiles").ToString+
+in_TransactionItem.SpecificContent("TestModule").ToString+"\"+
 in_TransactionItem.SpecificContent("TestName").ToString+"\"+
 in_TransactionItem.Reference]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign 'Path_TestLog'" sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign 'Path_TestLog'" sap:VirtualizedContainerService.HintSize="510,64" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Path_TestLog]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[Directory_TestLog+"\Test Log_"+in_TransactionItem.SpecificContent("TestName").ToString+"_"+in_TransactionItem.Reference+".docx"]</InArgument>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[Directory_TestLog +
+"\Test Log_"+in_TransactionItem.SpecificContent("TestName").ToString+"_"+in_TransactionItem.Reference+".docx"]</InArgument>
       </Assign.Value>
     </Assign>
-    <p:WordApplicationScope DisplayName="Word Application Scope 'Path_TestLog'" FilePath="[Path_TestLog]" sap:VirtualizedContainerService.HintSize="510,454" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+    <p:WordApplicationScope DisplayName="Private: Word Application Scope 'Path_TestLog'" FilePath="[Path_TestLog]" sap:VirtualizedContainerService.HintSize="510,454" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
       <p:WordApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WordDocument">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,345" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do Private: Word Application Scope 'Path_TestLog'" sap:VirtualizedContainerService.HintSize="476,345" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -107,5 +126,7 @@ in_TransactionItem.Reference]</InArgument>
         </ActivityAction>
       </p:WordApplicationScope.Body>
     </p:WordApplicationScope>
+    <ui:LogMessage DisplayName="Log Message - Initialized Test Result fIle" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Converted Test Result file to PDF&quot;]" />
+    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process - WINWORD" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="WINWORD" />
   </Sequence>
 </Activity>
