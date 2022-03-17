@@ -137,7 +137,7 @@ in_TransactionItem.Reference]</InArgument>
         </ActivityAction>
       </p:WordApplicationScope.Body>
     </p:WordApplicationScope>
-    <ui:LogMessage DisplayName="Log Message - Initialized Test Result fIle" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Added test screenshot to Test Result file&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - Initialized Test Result fIle" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Added test screenshot&quot;]" />
     <ui:LogMessage DisplayName="Log Message - Initialized Test Result fIle" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[in_LogMessage]" />
     <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process - WINWORD" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="WINWORD" />
   </Sequence>
