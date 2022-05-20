@@ -1,12 +1,16 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Initialization_ExtractTestsForQueueing" this:Initialization_ExtractTestsForQueueing.in_QueueReference="20220316181200" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_QueueReference" Type="InArgument(x:String)" />
-    <x:Property Name="out_ExtractDataTable_ForQueueing" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_TestScriptsForQueueing" Type="OutArgument(sd:DataTable)" />
   </x:Members>
+  <this:Initialization_ExtractTestsForQueueing.in_Config>
+    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+  </this:Initialization_ExtractTestsForQueueing.in_Config>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>939,1875</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1073,1613</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_TestsForQueueing_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -72,14 +76,12 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Initialization_ExtractTestsForQueueing" sap:VirtualizedContainerService.HintSize="488,1810" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Initialization_ExtractTestsForQueueing" sap:VirtualizedContainerService.HintSize="488,1548" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="in_Config" />
-      <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable" />
-      <Variable x:TypeArguments="x:Int32" Name="Index" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtExtractDataTable" />
+      <Variable x:TypeArguments="x:Int32" Name="intIndex" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -104,14 +106,14 @@
         </ui:InvokeWorkflowFile>
       </If.Then>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="446,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Extracting tests for queueing...&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="446,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;InitAllApplications_ExtractTestsForQueueing.xaml was invoked.&quot;]" />
     <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'RPA Test Automation Page'" sap:VirtualizedContainerService.HintSize="446,252" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="04d421212b54e510df163d910aca912d" Selector="[&quot;&lt;html app='msedge.exe' title='RPA Test Automation - &quot;+in_QueueReference+&quot;'/&gt;&quot;]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'table_ExecuteTests'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="100" SimulateClick="True">
+          <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dtExtractDataTable]" DisplayName="Extract Structured Data 'table_ExecuteTests'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="100" SimulateClick="True">
             <ui:ExtractData.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c9c48414-f079-412e-9af9-f6c260e68ce9" InformativeScreenshot="7ca97d586462353841d67efa9ed6af83" Selector="&lt;webctrl tag='TABLE' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
@@ -123,7 +125,7 @@
         </ActivityAction>
       </ui:BrowserScope.Body>
     </ui:BrowserScope>
-    <ui:FilterDataTable DataTable="[ExtractDataTable]" DisplayName="Filter Data Table 'ExtractDataTable_ForQueueing'" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="446,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[out_ExtractDataTable_ForQueueing]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DataTable="[dtExtractDataTable]" DisplayName="Filter Data Table 'ExtractDataTable_ForQueueing'" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="446,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[out_TestScriptsForQueueing]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -142,15 +144,14 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="0" DataTable="[out_ExtractDataTable_ForQueueing]" DisplayName="Remove Data Column 'Checkbox Column'" sap:VirtualizedContainerService.HintSize="446,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="446,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Finished extracting tests for queueing.&quot;]" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Private: Excel Application Scope 'Execution Queue file'" sap:VirtualizedContainerService.HintSize="446,810" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_Config(&quot;FolderLocation_ExecutionFiles&quot;).ToString+&quot;ExecutionQueue_&quot;+in_QueueReference+&quot;.xlsx&quot;]">
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="0" DataTable="[out_TestScriptsForQueueing]" DisplayName="Remove Data Column 'Checkbox Column'" sap:VirtualizedContainerService.HintSize="446,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope 'Execution Queue file'" sap:VirtualizedContainerService.HintSize="446,548" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_Config(&quot;FolderLocation_ExecutionFiles&quot;).ToString+&quot;ExecutionQueue_&quot;+in_QueueReference+&quot;.xlsx&quot;]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Sequence 'Private: Excel Application Scope 'Execution Queue file'" sap:VirtualizedContainerService.HintSize="412,701" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Sequence 'Excel Application Scope 'Execution Queue file'" sap:VirtualizedContainerService.HintSize="412,439" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="s:String[]" Default="[{&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;,&quot;G&quot;,&quot;H&quot;,&quot;I&quot;,&quot;J&quot;,&quot;K&quot;,&quot;L&quot;,&quot;M&quot;,&quot;N&quot;,&quot;O&quot;,&quot;P&quot;,&quot;Q&quot;,&quot;R&quot;,&quot;S&quot;,&quot;T&quot;,&quot;U&quot;,&quot;V&quot;,&quot;W&quot;,&quot;X&quot;,&quot;Y&quot;,&quot;Z&quot;}]" Name="array_Column" />
             </Sequence.Variables>
@@ -159,22 +160,21 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="370,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Creating Execution Queue file...&quot;]" />
-            <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="[Index]" DisplayName="For Each 'column in ExtractDataTable_ForQueueing.Columns'" sap:VirtualizedContainerService.HintSize="370,220" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[out_ExtractDataTable_ForQueueing.Columns]">
+            <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="[intIndex]" DisplayName="For Each 'column in ExtractDataTable_ForQueueing.Columns'" sap:VirtualizedContainerService.HintSize="370,220" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[out_TestScriptsForQueueing.Columns]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="sd:DataColumn">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataColumn" Name="column" />
                   </ActivityAction.Argument>
-                  <ui:ExcelWriteCell Cell="[array_Column(Index)+&quot;1&quot;]" DisplayName="Write Cell 'Column Name'" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Execution Queue" Text="[column.ToString]" />
+                  <ui:ExcelWriteCell Cell="[array_Column(intIndex)+&quot;1&quot;]" DisplayName="Write Cell 'Column Name'" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="[in_Config(&quot;ExecutionFile_SheetName&quot;).ToString]" Text="[column.ToString]" />
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
-            <ui:ExcelAppendRange DataTable="[out_ExtractDataTable_ForQueueing]" DisplayName="Append Range 'ExtractDataTable_ForQueueing'" sap:VirtualizedContainerService.HintSize="370,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_2" SheetName="Execution Queue" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="370,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Finished  creating Execution Queue file.&quot;]" />
+            <ui:ExcelAppendRange DataTable="[out_TestScriptsForQueueing]" DisplayName="Append Range 'ExtractDataTable_ForQueueing'" sap:VirtualizedContainerService.HintSize="370,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_2" SheetName="Execution Queue" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="446,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;InitAllApplications_ExtractTestsForQueueing.xaml was completed.&quot;]" />
   </Sequence>
 </Activity>
