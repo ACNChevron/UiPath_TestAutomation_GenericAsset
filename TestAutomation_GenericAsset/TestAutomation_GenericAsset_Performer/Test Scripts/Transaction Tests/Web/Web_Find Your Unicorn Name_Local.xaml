@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>935,1673</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1073,1935</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Web_Find_Your_Unicorn_Name_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -74,7 +74,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Web_Find_Your_Unicorn_Name" sap:VirtualizedContainerService.HintSize="742,1608" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Web_Find_Your_Unicorn_Name" sap:VirtualizedContainerService.HintSize="742,1870" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -98,6 +98,7 @@
         </ui:InvokeWorkflowFile>
       </If.Then>
     </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="700,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Web_Find Your Unicorn Name_Local.xaml was invoked.&quot;]" />
     <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Find Unicorn Name'" sap:VirtualizedContainerService.HintSize="700,1323" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="7ebb5369b4319b9ddfa8b124c0197332" Selector="&lt;html app='msedge.exe' title='Find Unicorn Name' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
@@ -181,7 +182,7 @@
             <Delay Duration="[TimeSpan.Parse(in_Config(&quot;Delay_Short&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="624,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
             <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Unicorn Name'" sap:VirtualizedContainerService.HintSize="624,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
               <ui:GetValue.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="22d55566-9961-4e8e-a77e-fb92f3c737a9" InformativeScreenshot="900ae2ec849ac4026852141211e25e84" Selector="&lt;webctrl tag='SPAN' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="22d55566-9961-4e8e-a77e-fb92f3c737a9" InformativeScreenshot="1bba42b1ad5dccd9db9cacc4acb04ee9" Selector="&lt;webctrl id='lblUnicornName' tag='DIV' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -199,7 +200,7 @@
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_WORD_AddScreenshot workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_WORD_AddScreenshot.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Transaction &quot;&quot;Find Your Unicorn Name&quot;&quot; was completed&quot;" />
+                      <Literal x:TypeArguments="x:String">Transaction 'Find Your Unicorn Name' was completed</Literal>
                     </InArgument>
                     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
                       <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
@@ -211,12 +212,13 @@
                 </ui:InvokeWorkflowFile>
               </If.Then>
               <If.Else>
-                <Throw DisplayName="Throw Business Exception" Exception="[new BusinessRuleException (&quot;Output Unicorn Name is &quot;&quot;&quot;+UnicornName+&quot;&quot;&quot; instead of &quot;&quot;Daffodil Twinkle-Sweet&quot;&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                <Throw DisplayName="Throw Business Exception" Exception="[new BusinessRuleException (&quot;Output Unicorn Name was '&quot;+UnicornName+&quot;' instead of 'Sparkle Raindrop-Mist'&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
               </If.Else>
             </If>
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>
     </ui:BrowserScope>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="700,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Web_Find Your Unicorn Name_Local.xaml was completed.&quot;]" />
   </Sequence>
 </Activity>

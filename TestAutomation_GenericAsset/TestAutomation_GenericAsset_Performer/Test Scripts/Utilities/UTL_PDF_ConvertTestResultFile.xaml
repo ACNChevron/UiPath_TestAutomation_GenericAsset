@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>935,1012</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1073,1143</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UTL_PDF_ConvertTestResultFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -75,9 +75,10 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UTL_PDF_ConvertTestResultFile" sap:VirtualizedContainerService.HintSize="552,947" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UTL_PDF_ConvertTestResultFile" sap:VirtualizedContainerService.HintSize="552,1078" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Directory_TestLog" />
       <Variable x:TypeArguments="x:String" Name="Path_TestLog" />
@@ -87,6 +88,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;UTL_PDF_ConvertTestResultFile.xaml was invoked.&quot;]" />
     <Assign DisplayName="Assign 'Directory_TestLog'" sap:VirtualizedContainerService.HintSize="510,64" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Directory_TestLog]</OutArgument>
@@ -125,7 +127,7 @@ in_TransactionItem.Reference]</InArgument>
         </ActivityAction>
       </p:WordApplicationScope.Body>
     </p:WordApplicationScope>
-    <ui:LogMessage DisplayName="Log Message - Initialized Test Result fIle" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Converted test result to PDF&quot;]" />
     <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process - WINWORD" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="WINWORD" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;UTL_PDF_ConvertTestResultFile.xaml was completed.&quot;]" />
   </Sequence>
 </Activity>
