@@ -2,6 +2,7 @@
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="out_ExecutionStart" Type="OutArgument(x:String)" />
   </x:Members>
   <this:Process.in_Config>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
@@ -96,6 +97,9 @@
         <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
           <mva:VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
         </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ExecutionStart">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_ExecutionStart" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Integration Test workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[&quot;Test Scripts\Integration Tests\&quot; _&#xA;+in_TransactionItem.SpecificContent(&quot;TestModule&quot;).ToString+&quot;\&quot; _&#xA;+in_TransactionItem.SpecificContent(&quot;TestName&quot;).ToString+&quot;.xaml&quot;]">

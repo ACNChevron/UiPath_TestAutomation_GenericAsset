@@ -97,7 +97,7 @@
         <InArgument x:TypeArguments="x:String" xml:space="preserve">[in_Config("FolderLocation_LogFiles").ToString+
 in_TransactionItem.SpecificContent("TestModule").ToString+"\"+
 in_TransactionItem.SpecificContent("TestName").ToString+"\"+
-in_TransactionItem.Reference]</InArgument>
+in_TransactionItem.SpecificContent("ExecutionID").ToString]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign DisplayName="Assign 'Path_TestLog'" sap:VirtualizedContainerService.HintSize="510,64" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -106,7 +106,7 @@ in_TransactionItem.Reference]</InArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String" xml:space="preserve">[Directory_TestLog +
-"\Test Log_"+in_TransactionItem.SpecificContent("TestName").ToString+"_"+in_TransactionItem.Reference+".docx"]</InArgument>
+"\Test Log_"+in_TransactionItem.SpecificContent("TestName").ToString+"_"+in_TransactionItem.SpecificContent("ExecutionID").ToString+".docx"]</InArgument>
       </Assign.Value>
     </Assign>
     <p:WordApplicationScope DisplayName="Private: Word Application Scope 'Path_TestLog'" FilePath="[Path_TestLog]" sap:VirtualizedContainerService.HintSize="510,454" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
