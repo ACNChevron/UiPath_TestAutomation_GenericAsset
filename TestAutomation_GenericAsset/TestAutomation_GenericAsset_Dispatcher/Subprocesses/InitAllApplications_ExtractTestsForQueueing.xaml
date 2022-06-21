@@ -106,7 +106,7 @@
         </ui:InvokeWorkflowFile>
       </If.Then>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="446,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;InitAllApplications_ExtractTestsForQueueing.xaml was invoked.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="446,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;InitAllApplications_ExtractTestsForQueueing.xaml was invoked.&quot;]" />
     <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'RPA Test Automation Page'" sap:VirtualizedContainerService.HintSize="446,252" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="04d421212b54e510df163d910aca912d" Selector="[&quot;&lt;html app='msedge.exe' title='RPA Test Automation - &quot;+in_QueueReference+&quot;'/&gt;&quot;]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
@@ -175,6 +175,6 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="446,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;InitAllApplications_ExtractTestsForQueueing.xaml was completed.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="446,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;InitAllApplications_ExtractTestsForQueueing.xaml was completed.&quot;]" />
   </Sequence>
 </Activity>

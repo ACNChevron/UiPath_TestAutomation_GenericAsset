@@ -69,6 +69,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="InitAllApplications_BuildUserInterface" sap:VirtualizedContainerService.HintSize="540,5737" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -101,7 +102,7 @@
         </ui:InvokeWorkflowFile>
       </If.Then>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="498,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;InitAllApplications_BuildUserInterface.xaml was invoked.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="498,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;InitAllApplications_BuildUserInterface.xaml was invoked.&quot;]" />
     <ui:ReadTextFile Content="[strReadHTMLFile]" DisplayName="Read Text File 'HTML_Opening'" FileName="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\HTML_Opening.txt&quot;]" sap:VirtualizedContainerService.HintSize="498,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
     <Assign DisplayName="Append 'HTML_Opening'" sap:VirtualizedContainerService.HintSize="498,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
@@ -318,6 +319,6 @@
       </Assign.Value>
     </Assign>
     <ui:WriteTextFile DisplayName="Write Text File" FileName="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\UserInterface.html&quot;]" sap:VirtualizedContainerService.HintSize="498,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strHTML]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="498,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;InitAllApplications_BuildUserInterface.xaml was completed.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="498,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;InitAllApplications_BuildUserInterface.xaml was completed.&quot;]" />
   </Sequence>
 </Activity>

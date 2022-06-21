@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1073,1374</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1073,1436</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UTL_TakeScreenshot_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -76,10 +76,9 @@
       <AssemblyReference>UiPath.Word</AssemblyReference>
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UTL_WORD_AddScreenshot" sap:VirtualizedContainerService.HintSize="552,1309" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UTL_WORD_AddScreenshot" sap:VirtualizedContainerService.HintSize="552,1371" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="SharedRepository" />
       <Variable x:TypeArguments="ui:Image" Name="Screenshot" />
@@ -93,7 +92,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;UTL_WORD_AddScreenshot.xaml was invoked.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;UTL_WORD_AddScreenshot.xaml was invoked.&quot;]" />
     <Assign DisplayName="Assign 'Directory_TestLog'" sap:VirtualizedContainerService.HintSize="510,64" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Directory_TestLog]</OutArgument>
@@ -114,6 +113,7 @@ in_TransactionItem.SpecificContent("ExecutionID").ToString]</InArgument>
 "\Test Log_"+in_TransactionItem.SpecificContent("TestName").ToString+"_"+in_TransactionItem.SpecificContent("ExecutionID").ToString+".docx"]</InArgument>
       </Assign.Value>
     </Assign>
+    <Delay Duration="[TimeSpan.Parse(in_Config(&quot;Delay_Medium&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="510,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_Config("FolderLocation_Screenshots").ToString]</InArgument>
@@ -139,6 +139,6 @@ in_TransactionItem.SpecificContent("ExecutionID").ToString]</InArgument>
       </p:WordApplicationScope.Body>
     </p:WordApplicationScope>
     <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process - WINWORD" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="WINWORD" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;UTL_WORD_AddScreenshot.xaml was invoked.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;UTL_WORD_AddScreenshot.xaml was invoked.&quot;]" />
   </Sequence>
 </Activity>
