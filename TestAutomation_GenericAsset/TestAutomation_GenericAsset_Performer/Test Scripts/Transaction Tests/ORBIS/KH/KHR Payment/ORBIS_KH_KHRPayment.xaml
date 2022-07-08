@@ -1,6 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ORBIS_KH_KHRPayment" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.microsoft.com/workflow/2012/07/xaml/activities" xmlns:p2="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:this="clr-namespace:" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_AmounDuetInKHR" Type="OutArgument(x:String)" />
   </x:Members>
   <this:ORBIS_KH_KHRPayment.in_Config>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
@@ -8,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1073,1054</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>591,1054</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ORBIS_KH_KHRPayment_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -84,12 +85,10 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="ORBIS_KH_KHRPayment" sap:VirtualizedContainerService.HintSize="476,989" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strAmountInKHR" />
       <Variable x:TypeArguments="x:Boolean" Name="boolActionCompleted" />
       <Variable x:TypeArguments="x:Int32" Name="intRetryCounter" />
     </Sequence.Variables>
@@ -109,7 +108,7 @@
             <ui:RetryScope DisplayName="Retry Scope 'Click KHR Payment'" sap:VirtualizedContainerService.HintSize="400,51" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Click KHR Payment'" sap:VirtualizedContainerService.HintSize="421,532" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Action Retry Scope 'Click KHR Payment'" sap:VirtualizedContainerService.HintSize="421,502" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -183,7 +182,7 @@
             <ui:RetryScope DisplayName="Retry Scope 'Get Amount in KHR'" sap:VirtualizedContainerService.HintSize="400,51" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Get Amount in KHR'" sap:VirtualizedContainerService.HintSize="421,532" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Action Retry Scope 'Get Amount in KHR'" sap:VirtualizedContainerService.HintSize="421,562" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -195,7 +194,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (555,206,78,20)&quot; +&#xA;&quot;Anchor: Text 'Amount in KHR:' (378,208,128,15)&quot;]" DesignTimeCacheId="b86ee0ea-de3b-467e-80b1-e0dbf360d004" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text 'Amount in KHR'" sap:VirtualizedContainerService.HintSize="379,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="5fa43ea0274ae3864f98969b2e8529f3" RefreshBefore="True" Result="[strAmountInKHR]" Version="V2">
+                    <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (555,206,78,20)&quot; +&#xA;&quot;Anchor: Text 'Amount in KHR:' (378,208,128,15)&quot;]" DesignTimeCacheId="b86ee0ea-de3b-467e-80b1-e0dbf360d004" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text 'Amount in KHR'" sap:VirtualizedContainerService.HintSize="379,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="5fa43ea0274ae3864f98969b2e8529f3" RefreshBefore="True" Result="[out_AmounDuetInKHR]" Version="V2">
                       <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
                           <uc:CvDescriptor.Anchors>
@@ -211,7 +210,7 @@
                     </p:CvGetTextWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">["Amount in KHR '"+strAmountInKHR+"' was stored."]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">["Amount in KHR '"+out_AmounDuetInKHR+"' was stored."]</InArgument>
                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
@@ -248,13 +247,12 @@
                     </ui:InvokeWorkflowFile>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_ORBIS_Keypad_ForeignCurrency workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_ORBIS_Keypad_ForeignCurrency.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Amount">[strAmountInKHR.Substring(0, strAmountInKHR.IndexOf("."))]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Amount">[out_AmounDuetInKHR.Substring(0, out_AmounDuetInKHR.IndexOf("."))]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">["Amount in KHR '"+strAmountInKHR+"' was entered."]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">["Amount in KHR '"+out_AmounDuetInKHR+"' was entered."]</InArgument>
                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
@@ -277,7 +275,7 @@
             <ui:RetryScope DisplayName="Retry Scope 'Click OK'" sap:VirtualizedContainerService.HintSize="400,51" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Click OK'" sap:VirtualizedContainerService.HintSize="421,502" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Action Retry Scope 'Click OK'" sap:VirtualizedContainerService.HintSize="421,532" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>

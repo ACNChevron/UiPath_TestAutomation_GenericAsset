@@ -1,15 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="UTL_ORBIS_Keypad_ForeignCurrency" this:UTL_ORBIS_Keypad_ForeignCurrency.in_Amount="7800" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:this="clr-namespace:" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_Amount" Type="InArgument(x:String)" />
   </x:Members>
-  <this:UTL_ORBIS_Keypad_ForeignCurrency.in_Config>
-    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
-  </this:UTL_ORBIS_Keypad_ForeignCurrency.in_Config>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1073,1603</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>599,1238</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UTL_ORBIS_Keypad_ForeignCurrency_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -84,27 +80,27 @@
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UTL_ORBIS_Keypad_ForeignCurrency" sap:VirtualizedContainerService.HintSize="609,1538" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UTL_ORBIS_Keypad_ForeignCurrency" sap:VirtualizedContainerService.HintSize="609,1133" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="567,91" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;UTL_ORBIS_Keypad_ForeignCurrency.xaml was invoked.&quot;]" />
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="1d572346-9fcb-41fe-960f-4f649e57dfb6" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="567,1184" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V2">
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="1d572346-9fcb-41fe-960f-4f649e57dfb6" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="567,779" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V2">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_14">
-            <ui:ForEach x:TypeArguments="x:Char" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="533,873" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_Amount.ToCharArray]">
+            <ui:ForEach x:TypeArguments="x:Char" CurrentIndex="{x:Null}" DisplayName="For Each 'character in in_Amount.ToCharArray'" sap:VirtualizedContainerService.HintSize="533,468" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_Amount.ToCharArray]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Char">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Char" Name="character" />
                   </ActivityAction.Argument>
-                  <Switch x:TypeArguments="x:Char" DisplayName="Switch" Expression="[character]" sap:VirtualizedContainerService.HintSize="497,740" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                  <Switch x:TypeArguments="x:Char" DisplayName="Switch" Expression="[character]" sap:VirtualizedContainerService.HintSize="497,335" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                     <Switch.Default>
                       <Sequence DisplayName="Sequence 'Case Default'" sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
@@ -112,7 +108,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Foreign Currency' (398,110,234,29)&quot;]" DesignTimeCacheId="1d572346-9fcb-41fe-960f-4f649e57dfb6" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_11" InformativeScreenshot="ed3b6614e13996791664d3ecc3039b50" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                        <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Foreign Currency' (398,110,234,29)&quot;]" DesignTimeCacheId="1d572346-9fcb-41fe-960f-4f649e57dfb6" DesignTimeScaleFactor="1" DisplayName="CV Click - Text 'Foreign Currency'" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_11" InformativeScreenshot="ed3b6614e13996791664d3ecc3039b50" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                           <p:CvClickWithDescriptor.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -144,7 +140,7 @@
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Foreign Currency was clicked instead of '&quot;+character+&quot;'.&quot;]" />
                       </Sequence>
                     </Switch.Default>
-                    <Sequence x:Key="1" DisplayName="Sequence 'Case 1'" sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence x:Key="1" DisplayName="Sequence 'Case 1'" sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -194,7 +190,7 @@
                       </p:CvClickWithDescriptor>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Key 1 was pressed.&quot;]" />
                     </Sequence>
-                    <Sequence x:Key="2" DisplayName="Sequence 'Case 2'" sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence x:Key="2" DisplayName="Sequence 'Case 2'" sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -243,7 +239,7 @@
                       </p:CvClickWithDescriptor>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Key 2 was pressed.&quot;]" />
                     </Sequence>
-                    <Sequence x:Key="3" DisplayName="Sequence 'Case 3'" sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence x:Key="3" DisplayName="Sequence 'Case 3'" sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -293,7 +289,7 @@
                       </p:CvClickWithDescriptor>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Key 3 was pressed.&quot;]" />
                     </Sequence>
-                    <Sequence x:Key="4" DisplayName="Sequence 'Case 4'" sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence x:Key="4" DisplayName="Sequence 'Case 4'" sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -343,7 +339,7 @@
                       </p:CvClickWithDescriptor>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Key 4 was pressed.&quot;]" />
                     </Sequence>
-                    <Sequence x:Key="5" DisplayName="Sequence 'Case 5'" sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence x:Key="5" DisplayName="Sequence 'Case 5'" sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -936,7 +932,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8d65ba71-2ac8-4074-a082-8c8add815630" InformativeScreenshot="49dd20d55b69f6195de8f82a1c5d786b" Selector="&lt;html app='msedge.exe' title='Web Rep Console - Patricio Calacasan' /&gt;&lt;webctrl tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8d65ba71-2ac8-4074-a082-8c8add815630" InformativeScreenshot="49dd20d55b69f6195de8f82a1c5d786b" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&lt;webctrl omit:tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>

@@ -110,7 +110,7 @@ in_TransactionItem.SpecificContent("ExecutionID").ToString]</InArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String" xml:space="preserve">[strDirectory_TestLog +
-"\Test Log_"+in_TransactionItem.SpecificContent("TestName").ToString+"_"+in_TransactionItem.SpecificContent("ExecutionID").ToString+".pdf"]</InArgument>
+"\"+in_ExecutionStatus.ToUpper+"_Test Log_"+in_TransactionItem.SpecificContent("TestName").ToString+"_"+in_TransactionItem.SpecificContent("ExecutionID").ToString+".pdf"]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:Replace DisplayName="Replace 'Screenshots'" sap:VirtualizedContainerService.HintSize="497,59" sap2010:WorkflowViewState.IdRef="Replace_4" Input="[strHTML]" IsBuilderTabModified="False" Pattern="(?&lt;=class='tdScreenshots'&gt;)(.*?)(?=&lt;\/td&gt;)" RegexOption="IgnoreCase, Compiled" Replacement="[&quot;&lt;a id='logFile_&quot;+in_TransactionItem.SpecificContent(&quot;ExecutionID&quot;).ToString+&quot;' &quot; + _&#xA;&quot;href='&quot;+strPath_TestLog+&quot;'&quot; + _ &#xA;&quot;onclick='showModalLogFile(this.id);'&gt;&quot;+ _ &#xA;&quot;Execution ID: &quot;+in_TransactionItem.SpecificContent(&quot;ExecutionID&quot;).ToString+ _ &#xA;&quot;&lt;/a&gt;&quot;]" Result="[strHTML]" />
