@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>645,1292</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>646,1280</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ORBIS_KH_ReceiptBrowser_VerifyTotalFuel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -83,9 +83,10 @@
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ORBIS_KH_ReceiptBrowser_VerifyTotalFuel" sap:VirtualizedContainerService.HintSize="655,1187" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ORBIS_KH_ReceiptBrowser_VerifyTotalFuel" sap:VirtualizedContainerService.HintSize="656,1215.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intRetryCounter" />
       <Variable x:TypeArguments="x:Boolean" Name="boolActionCompleted" />
@@ -95,7 +96,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If sap2010:Annotation.AnnotationText="This activity helps in running the xaml file independently. Developer can debug run this xaml file without passing through Main's Initialization state." Condition="[in_Config Is Nothing]" DisplayName="If in_Config Is Nothing" sap:VirtualizedContainerService.HintSize="613,153" sap2010:WorkflowViewState.IdRef="If_2">
+    <If sap2010:Annotation.AnnotationText="This activity helps in running the xaml file independently. Developer can debug run this xaml file without passing through Main's Initialization state." Condition="[in_Config Is Nothing]" DisplayName="If in_Config Is Nothing" sap:VirtualizedContainerService.HintSize="614,164.666666666667" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -113,30 +114,30 @@
         </ui:InvokeWorkflowFile>
       </If.Then>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="613,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ORBIS_KH_ReceiptBrowser_VerifyTotalFuel.xaml was invoked.&quot;]" />
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="666cc59c-8ca2-4c5b-92e8-15ffbbfbb304" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="613,640" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="614,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ORBIS_KH_ReceiptBrowser_VerifyTotalFuel.xaml was invoked.&quot;]" />
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="666cc59c-8ca2-4c5b-92e8-15ffbbfbb304" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="614,649.333333333333" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V2">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
-            <ui:RetryScope DisplayName="Retry Scope 'Get Total Fuel'" sap:VirtualizedContainerService.HintSize="579,51" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
+            <ui:RetryScope DisplayName="Retry Scope 'Get Total Fuel'" sap:VirtualizedContainerService.HintSize="580,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Get Total Fuel'" sap:VirtualizedContainerService.HintSize="421,562" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="Action Retry Scope 'Get Total Fuel'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Increment workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Increment.xaml">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Increment workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Increment.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryCounter">[intRetryCounter]</InOutArgument>
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (809,309,32,11)&quot; +&#xA;&quot;Anchor: Text 'TOTAL' (512,309,41,11)&quot; +&#xA;&quot;Anchor: Text '$' (737,308,7,13)&quot;]" DesignTimeCacheId="bf5a613d-f71d-4455-83ae-676940d56b87" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text 'Total Fuel'" sap:VirtualizedContainerService.HintSize="379,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="5a96573009ffd15902ee37674f5c75d6" RefreshBefore="True" Result="[out_TotalAmount_Receipt]" Version="V2">
+                    <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (809,309,32,11)&quot; +&#xA;&quot;Anchor: Text 'TOTAL' (512,309,41,11)&quot; +&#xA;&quot;Anchor: Text '$' (737,308,7,13)&quot;]" DesignTimeCacheId="bf5a613d-f71d-4455-83ae-676940d56b87" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text 'Total Fuel'" sap:VirtualizedContainerService.HintSize="379.333333333333,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="5a96573009ffd15902ee37674f5c75d6" RefreshBefore="True" Result="[out_TotalAmount_Receipt]" Version="V2">
                       <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
                           <uc:CvDescriptor.Anchors>
@@ -151,7 +152,7 @@
                         </uc:CvDescriptor>
                       </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                     </p:CvGetTextWithDescriptor>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">Transaction Options was clicked.</InArgument>
                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
@@ -181,12 +182,12 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <If Condition="[Convert.ToDecimal(in_TotalAmount_Dispensed) = Convert.ToDecimal(out_TotalAmount_Receipt)]" DisplayName="If 'Total Fuel DOMS = Total Fuel ORBIS'" sap:VirtualizedContainerService.HintSize="579,238" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[Convert.ToDecimal(in_TotalAmount_Dispensed) = Convert.ToDecimal(out_TotalAmount_Receipt)]" DisplayName="If 'Total Fuel DOMS = Total Fuel ORBIS'" sap:VirtualizedContainerService.HintSize="580,245.333333333333" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Total Fuel from DOMS '&quot;+in_TotalAmount_Dispensed+&quot; is equal to Total Fuel from ORBIS '&quot;+out_TotalAmount_Receipt+&quot;'.&quot;]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Total Fuel from DOMS '&quot;+in_TotalAmount_Dispensed+&quot; is equal to Total Fuel from ORBIS '&quot;+out_TotalAmount_Receipt+&quot;'.&quot;]" />
               </If.Then>
               <If.Else>
-                <Throw DisplayName="Throw 'Business Exception'" Exception="[new BusinessRuleException(&quot;Total Fuel from DOMS '&quot;+in_TotalAmount_Dispensed+&quot; is equal to Total Fuel from ORBIS '&quot;+out_TotalAmount_Receipt+&quot;'.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                <Throw DisplayName="Throw 'Business Exception'" Exception="[new BusinessRuleException(&quot;Total Fuel from DOMS '&quot;+in_TotalAmount_Dispensed+&quot; is NOT equal to Total Fuel from ORBIS '&quot;+out_TotalAmount_Receipt+&quot;'.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
               </If.Else>
             </If>
           </Sequence>
@@ -1045,7 +1046,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="090acbe6-880a-4642-a377-dfe4a56389b0" InformativeScreenshot="6785b6f7147e942169cd6bb58d714d93" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&lt;webctrl omit:tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="090acbe6-880a-4642-a377-dfe4a56389b0" InformativeScreenshot="6785b6f7147e942169cd6bb58d714d93" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -1055,6 +1056,6 @@
         <InArgument x:TypeArguments="x:Boolean" />
       </p:CVScope.UseLocalServer>
     </p:CVScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="613,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ORBIS_KH_ReceiptBrowser_VerifyTotalFuel.xaml was completed.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="614,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ORBIS_KH_ReceiptBrowser_VerifyTotalFuel.xaml was completed.&quot;]" />
   </Sequence>
 </Activity>
