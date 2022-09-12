@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>582,1717.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>578,1717.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>POS_KH_BuyDrystock_AmericanoLarge_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -110,7 +110,7 @@
             <ui:RetryScope DisplayName="Retry Scope 'Click Manager'" sap:VirtualizedContainerService.HintSize="400,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Click Manager'" sap:VirtualizedContainerService.HintSize="421.333333333333,506" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Action Retry Scope 'Click Manager'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -352,15 +352,9 @@
                     </p:CvGetTextWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Current Price '&quot;+strCurrentPrice+&quot;' was stored.&quot;" />
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intRetryCounter" />
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">
-                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolActionCompleted" />
-                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">["Current Price '"+strCurrentPrice+"' was stored."]</InArgument>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -2116,7 +2110,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1ce580e9-a283-4f61-8def-d214c23a6f9d" InformativeScreenshot="95e7ce1efc8acb4a239ee467e58d053f" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&lt;webctrl omit:tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1ce580e9-a283-4f61-8def-d214c23a6f9d" InformativeScreenshot="95e7ce1efc8acb4a239ee467e58d053f" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>

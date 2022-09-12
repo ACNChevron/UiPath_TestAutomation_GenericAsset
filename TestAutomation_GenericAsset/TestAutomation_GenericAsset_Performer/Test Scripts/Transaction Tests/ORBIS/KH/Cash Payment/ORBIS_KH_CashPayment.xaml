@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>591,1767</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>578,1745.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ORBIS_KH_CashPayment_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -83,9 +83,10 @@
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ORBIS_KH_CashPayment" sap:VirtualizedContainerService.HintSize="539,1662" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ORBIS_KH_CashPayment" sap:VirtualizedContainerService.HintSize="539.333333333333,1680.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boolActionCompleted" />
     </Sequence.Variables>
@@ -94,7 +95,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If sap2010:Annotation.AnnotationText="This activity helps in running the xaml file independently. Developer can debug run this xaml file without passing through Main's Initialization state." Condition="[in_Config Is Nothing]" DisplayName="If in_Config Is Nothing" sap:VirtualizedContainerService.HintSize="497,153" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="This activity helps in running the xaml file independently. Developer can debug run this xaml file without passing through Main's Initialization state." Condition="[in_Config Is Nothing]" DisplayName="If in_Config Is Nothing" sap:VirtualizedContainerService.HintSize="497.333333333333,164.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -112,8 +113,8 @@
         </ui:InvokeWorkflowFile>
       </If.Then>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ORBIS_KH_CashPayment..xaml was invoked.&quot;]" />
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="bc625bb4-fe00-440d-9d21-2508eecd8e4e" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="497,1115" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ORBIS_KH_CashPayment..xaml was invoked.&quot;]" />
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="bc625bb4-fe00-440d-9d21-2508eecd8e4e" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="497.333333333333,1118.66666666667" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V2">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -123,16 +124,16 @@
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="intRetryCounter" />
             </Sequence.Variables>
-            <ui:RetryScope DisplayName="Retry Scope 'Click Cash Payment button'" sap:VirtualizedContainerService.HintSize="463,51" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
+            <ui:RetryScope DisplayName="Retry Scope 'Click Cash Payment button'" sap:VirtualizedContainerService.HintSize="463.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Click Cash Payment button'" sap:VirtualizedContainerService.HintSize="421,532" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="Action Retry Scope 'Click Cash Payment button'" sap:VirtualizedContainerService.HintSize="421.333333333333,534" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Increment workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Increment.xaml">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Increment workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Increment.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryCounter">[intRetryCounter]</InOutArgument>
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
@@ -197,7 +198,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <ui:RetryScope DisplayName="Retry Scope 'Click Exact Amount'" sap:VirtualizedContainerService.HintSize="463,713" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
+            <ui:RetryScope DisplayName="Retry Scope 'Click Exact Amount'" sap:VirtualizedContainerService.HintSize="463.333333333333,714.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action Retry Scope 'Click Exact Amount'" sap:VirtualizedContainerService.HintSize="421,532" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -212,7 +213,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (250,176,232,84)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Cash' (150,69,68,24)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Amount:' (603,144,64,16)&quot; +&#xD;&#xA;&quot;Anchor: Button (161,272,128,64)&quot; +&#xD;&#xA;&quot;Anchor: Button (297,272,130,64)&quot; +&#xD;&#xA;&quot;Anchor: Button (435,272,129,65)&quot; +&#xD;&#xA;&quot;Anchor: Text '7' (628,199,14,18)&quot; +&#xD;&#xA;&quot;Anchor: Text '4' (628,266,14,18)&quot; +&#xD;&#xA;&quot;Anchor: Text '1' (629,331,12,19)&quot;]" DesignTimeCacheId="cb82db22-eb34-4f94-92b5-e8b3a5ab6e4b" DesignTimeScaleFactor="1" DisplayName="CV Click - Button 'Exact Amount'" sap:VirtualizedContainerService.HintSize="379,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="ff7193701f188300870e5481cd58f7a6" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (250,176,232,84)&quot; +&#xA;&quot;Anchor: Text 'Cash' (150,69,68,24)&quot; +&#xA;&quot;Anchor: Text 'Amount:' (603,144,64,16)&quot; +&#xA;&quot;Anchor: Button (161,272,128,64)&quot; +&#xA;&quot;Anchor: Button (297,272,130,64)&quot; +&#xA;&quot;Anchor: Button (435,272,129,65)&quot; +&#xA;&quot;Anchor: Text '7' (628,199,14,18)&quot; +&#xA;&quot;Anchor: Text '4' (628,266,14,18)&quot; +&#xA;&quot;Anchor: Text '1' (629,331,12,19)&quot;]" DesignTimeCacheId="cb82db22-eb34-4f94-92b5-e8b3a5ab6e4b" DesignTimeScaleFactor="1" DisplayName="CV Click - Button 'Exact Amount'" sap:VirtualizedContainerService.HintSize="379,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="ff7193701f188300870e5481cd58f7a6" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -805,7 +806,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="924a93d4-3100-4d7f-90b2-91919d856ab1" InformativeScreenshot="d4372cf00b23e82576edddc4c28f1d7d" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&lt;webctrl omit:tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="924a93d4-3100-4d7f-90b2-91919d856ab1" InformativeScreenshot="d4372cf00b23e82576edddc4c28f1d7d" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>

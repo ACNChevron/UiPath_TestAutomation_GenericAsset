@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>590,2404</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>578,2404</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ORBIS_KH_KHRPayment_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -84,6 +84,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="ORBIS_KH_CancelSale_Yes" sap:VirtualizedContainerService.HintSize="539.333333333333,2339.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -1285,7 +1286,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a4498513-7a5f-464f-9278-3caf6a45f80b" InformativeScreenshot="60c94bfaff927d39194717a246b321d6" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&lt;webctrl omit:tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a4498513-7a5f-464f-9278-3caf6a45f80b" InformativeScreenshot="60c94bfaff927d39194717a246b321d6" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>

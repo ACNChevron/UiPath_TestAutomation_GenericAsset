@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>590,790</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>578,790</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ORBIS_KH_SwitchWIndow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -74,7 +74,6 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
@@ -84,6 +83,7 @@
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="ORBIS_KH_SwitchWIndow_From1To2" sap:VirtualizedContainerService.HintSize="476,725.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -119,7 +119,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '2' (96,75,19,21)&quot; +&#xD;&#xA;&quot;Anchor: Button (70,64,68,43)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Food' (92,38,26,9)&quot;]" DesignTimeCacheId="b8412c09-bf3c-4307-9f2a-968697ff41e0" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text 'Window 2'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="79b2d0dd6e751f0650f0187d47b0cd84" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '2' (96,75,19,21)&quot; +&#xA;&quot;Anchor: Button (70,64,68,43)&quot; +&#xA;&quot;Anchor: Text 'Food' (92,38,26,9)&quot;]" DesignTimeCacheId="b8412c09-bf3c-4307-9f2a-968697ff41e0" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text 'Window 2'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="79b2d0dd6e751f0650f0187d47b0cd84" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -156,15 +156,9 @@
                     </p:CvClickWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                          <Literal x:TypeArguments="x:String">Window 2 was clicked.</Literal>
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intRetryCounter" />
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">
-                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolActionCompleted" />
-                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">Window 2 was clicked.</InArgument>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -185,6 +179,9 @@
           </Sequence>
         </ActivityAction>
       </p:CVScope.Body>
+      <p:CVScope.DesignTimeCache>
+        <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+      </p:CVScope.DesignTimeCache>
       <p:CVScope.DesignTimeCacheContainer>
         <uc:CvCacheContainer>
           <uc:CvCacheContainer.Caches>
@@ -514,7 +511,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="52e323e8-1733-476a-b9c8-0c57d49a0ba8" InformativeScreenshot="eb07d6ccbf5fcdb71e11caacbf6ec058" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&lt;webctrl omit:tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="52e323e8-1733-476a-b9c8-0c57d49a0ba8" InformativeScreenshot="eb07d6ccbf5fcdb71e11caacbf6ec058" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>

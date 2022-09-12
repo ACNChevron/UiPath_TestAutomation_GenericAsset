@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1073,963</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>578,969.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>POS_KH_BuyDrystock_AmericanoLarge_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -86,7 +86,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ORBIS_KH_BuyDrystock_Category1_Item1" sap:VirtualizedContainerService.HintSize="476,898" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ORBIS_KH_BuyDrystock_Category1_Item1" sap:VirtualizedContainerService.HintSize="476,904.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intRetryCounter" />
       <Variable x:TypeArguments="x:Boolean" Name="boolActionCompleted" />
@@ -96,24 +96,24 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ORBIS_KH_BuyDrystock_Category1_Item1.xaml was invoked.&quot;]" />
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="5d5e9b97-bcd7-4890-89bc-82e52b98b0ed" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="434,544" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ORBIS_KH_BuyDrystock_Category1_Item1.xaml was invoked.&quot;]" />
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="5d5e9b97-bcd7-4890-89bc-82e52b98b0ed" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="434,547.333333333333" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V2">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <ui:RetryScope DisplayName="Retry Scope 'Click Drystock Category 1'" sap:VirtualizedContainerService.HintSize="400,51" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
+            <ui:RetryScope DisplayName="Retry Scope 'Click Drystock Category 1'" sap:VirtualizedContainerService.HintSize="400,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Click Drystock Category 1'" sap:VirtualizedContainerService.HintSize="421,532" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Action Retry Scope 'Click Drystock Category 1'" sap:VirtualizedContainerService.HintSize="421.333333333333,534" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Increment workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Increment.xaml">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Increment workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Increment.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryCounter">[intRetryCounter]</InOutArgument>
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
@@ -175,7 +175,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <ui:RetryScope DisplayName="Retry Scope 'Click Item 1'" sap:VirtualizedContainerService.HintSize="400,51" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
+            <ui:RetryScope DisplayName="Retry Scope 'Click Item 1'" sap:VirtualizedContainerService.HintSize="400,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action Retry Scope 'Click Item 1'" sap:VirtualizedContainerService.HintSize="421,532" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -1229,7 +1229,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b09e9a3c-729f-4408-a76e-6f6d12b5c740" InformativeScreenshot="a2928cd1573b249610aaf9f90ba83fa6" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&lt;webctrl omit:tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b09e9a3c-729f-4408-a76e-6f6d12b5c740" InformativeScreenshot="a2928cd1573b249610aaf9f90ba83fa6" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>

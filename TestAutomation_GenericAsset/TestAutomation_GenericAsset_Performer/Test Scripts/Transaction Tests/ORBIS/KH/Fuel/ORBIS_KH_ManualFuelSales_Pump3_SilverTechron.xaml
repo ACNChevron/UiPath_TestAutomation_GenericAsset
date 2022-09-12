@@ -378,15 +378,9 @@
                     </p:CvClickWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                          <Literal x:TypeArguments="x:String">Fuel Grade Silver Techron was selected.</Literal>
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intRetryCounter" />
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">
-                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolActionCompleted" />
-                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">Fuel Grade Silver Techron was selected.</InArgument>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -492,15 +486,9 @@
                     </ui:InvokeWorkflowFile>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Fuel Amount '&quot;+in_Config(&quot;Amount_ManualDelivery_Pump3_SilverTechron_ManualFuelSale&quot;).ToString+&quot;' was entered.&quot;" />
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intRetryCounter" />
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">
-                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolActionCompleted" />
-                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">["Fuel Amount '"+in_Config("Amount_ManualDelivery_Pump3_SilverTechron_ManualFuelSale").ToString+"' was entered."]</InArgument>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -1317,7 +1305,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1f065fe-9508-4572-8da9-55b95603e904" InformativeScreenshot="3eee3326c8b554d0412eb9665cdb5c54" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&lt;webctrl omit:tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1f065fe-9508-4572-8da9-55b95603e904" InformativeScreenshot="3eee3326c8b554d0412eb9665cdb5c54" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>

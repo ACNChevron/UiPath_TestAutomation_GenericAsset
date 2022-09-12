@@ -81,6 +81,7 @@
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="ORBIS_KH_ReceiptBrowser" sap:VirtualizedContainerService.HintSize="539.333333333333,1600" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -116,7 +117,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Transaction' (521,206,83,14)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Options' (534,223,57,17)&quot;]" DesignTimeCacheId="b2066b8c-c53c-45c0-83ad-c3a83b19f8a6" DesignTimeScaleFactor="1" DisplayName="CV Click - 'Transaction Options'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="c23160583aeb8f07da19ff5941fcf16d" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Transaction' (521,206,83,14)&quot; +&#xA;&quot;Anchor: Text 'Options' (534,223,57,17)&quot;]" DesignTimeCacheId="b2066b8c-c53c-45c0-83ad-c3a83b19f8a6" DesignTimeScaleFactor="1" DisplayName="CV Click - 'Transaction Options'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="c23160583aeb8f07da19ff5941fcf16d" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -195,7 +196,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Receipt' (634,141,62,18)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Browser' (631,159,68,16)&quot;]" DesignTimeCacheId="c8894a88-6859-479e-b2fd-7f5455fe4cc7" DesignTimeScaleFactor="1" DisplayName="CV Click - 'Receipt Browswer'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_4" InformativeScreenshot="c39cf3860eb7e8195ef6e38502d74275" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Receipt' (634,141,62,18)&quot; +&#xA;&quot;Anchor: Text 'Browser' (631,159,68,16)&quot;]" DesignTimeCacheId="c8894a88-6859-479e-b2fd-7f5455fe4cc7" DesignTimeScaleFactor="1" DisplayName="CV Click - 'Receipt Browswer'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_4" InformativeScreenshot="c39cf3860eb7e8195ef6e38502d74275" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -1199,7 +1200,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a1dbaff8-2f29-42e2-ad13-b2055af07106" InformativeScreenshot="8140919415b1d671d7b09b6fbeda88a6" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&#xD;&#xA;&lt;webctrl tag='DIV' class='p-tabview-panel ng-star-inserted' id='bt-tab-panel-*'   aria-hidden='false' /&gt;&#xD;&#xA;&lt;webctrl tag='DIV' class='p-tabview-panel ng-star-inserted' id='p-tabpanel-*' aria-hidden='false'  /&gt;&#xD;&#xA;&lt;webctrl tag='DIV' class='screenSharingContainer dot-cursor' style='visibility: visible;' /&gt;&#xD;&#xA;&lt;webctrl tag='CANVAS' class='remotePointerCanvas' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a1dbaff8-2f29-42e2-ad13-b2055af07106" InformativeScreenshot="8140919415b1d671d7b09b6fbeda88a6" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>

@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>646,1868</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>578,975.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ORBIS_KH_VerifyAmountDueIsZero_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -89,7 +89,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ORBIS_KH_VerifyFuelPriceIsUpdated" sap:VirtualizedContainerService.HintSize="656,1803.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ORBIS_KH_VerifyFuelPriceIsUpdated" sap:VirtualizedContainerService.HintSize="476,910.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boolActionCompleted" />
       <Variable x:TypeArguments="x:Int32" Name="intRetryCounter" />
@@ -100,15 +100,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="614,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ORBIS_KH_VerifyFuelPriceIsUpdated.xaml was invoked.&quot;]" />
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="be7c9149-ddc2-4e8a-9607-90b6fe5051cb" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="614,1442" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ORBIS_KH_VerifyFuelPriceIsUpdated.xaml was invoked.&quot;]" />
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="be7c9149-ddc2-4e8a-9607-90b6fe5051cb" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="434,549.333333333333" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V2">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_4">
-            <ui:RetryScope DisplayName="Retry Scope 'Get Unit Price" sap:VirtualizedContainerService.HintSize="580,752.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
+            <ui:RetryScope DisplayName="Retry Scope 'Get Unit Price" sap:VirtualizedContainerService.HintSize="400,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action Retry Scope 'Get Unit Price'" sap:VirtualizedContainerService.HintSize="421.333333333333,570" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -154,12 +154,12 @@
               </ui:RetryScope.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <ui:ModifyText DisplayName="Modify Text" sap:VirtualizedContainerService.HintSize="580,52.6666666666667" sap2010:WorkflowViewState.IdRef="ModifyText_1" OutputText="[strUnitPrice]" SourceText="[strUnitPrice]">
+            <ui:ModifyText DisplayName="Modify Text" sap:VirtualizedContainerService.HintSize="400,52.6666666666667" sap2010:WorkflowViewState.IdRef="ModifyText_1" OutputText="[strUnitPrice]" SourceText="[strUnitPrice]">
               <ui:ModifyText.Body>
                 <ActivityAction>
                   <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -185,7 +185,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ModifyText>
-            <If Condition="[strUnitPrice = in_NewPrice.ToString]" DisplayName="If 'strUnitPrice = in_NewPrice.ToString'" sap:VirtualizedContainerService.HintSize="580,245.333333333333" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[strUnitPrice = in_NewPrice.ToString]" DisplayName="If 'strUnitPrice = in_NewPrice.ToString'" sap:VirtualizedContainerService.HintSize="400,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Unit Price in Sales window '&quot;+strUnitPrice+&quot;' was verified equal to New Price '&quot;+in_NewPrice.ToString+&quot;' of Fuel.&quot;]" />
               </If.Then>
@@ -554,7 +560,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1d1e2a72-6290-4a07-9fc6-7b08dc043b21" InformativeScreenshot="7698778b55cb5fd449f8c7dc63424452" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&lt;webctrl omit:tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1d1e2a72-6290-4a07-9fc6-7b08dc043b21" InformativeScreenshot="7698778b55cb5fd449f8c7dc63424452" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -564,6 +570,6 @@
         <InArgument x:TypeArguments="x:Boolean" />
       </p:CVScope.UseLocalServer>
     </p:CVScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="614,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ORBIS_KH_VerifyFuelPriceIsUpdated.xaml was completed.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ORBIS_KH_VerifyFuelPriceIsUpdated.xaml was completed.&quot;]" />
   </Sequence>
 </Activity>

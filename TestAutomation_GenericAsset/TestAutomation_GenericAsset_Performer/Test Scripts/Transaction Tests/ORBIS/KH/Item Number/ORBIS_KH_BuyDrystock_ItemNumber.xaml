@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>590,1486</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>578,790</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>POS_KH_BuyDrystock_AmericanoLarge_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -86,7 +86,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ORBIS_KH_BuyDrystock_ItemNumber" sap:VirtualizedContainerService.HintSize="539.333333333333,1421.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ORBIS_KH_BuyDrystock_ItemNumber" sap:VirtualizedContainerService.HintSize="476,725.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intRetryCounter" />
       <Variable x:TypeArguments="x:Boolean" Name="boolActionCompleted" />
@@ -96,15 +96,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ORBIS_KH_BuyDrystock_ItemNumber.xaml was invoked.&quot;]" />
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="b5b19cbd-13e6-45d6-9fa9-c5a4d56fc404" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="497.333333333333,1060" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ORBIS_KH_BuyDrystock_ItemNumber.xaml was invoked.&quot;]" />
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="b5b19cbd-13e6-45d6-9fa9-c5a4d56fc404" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="434,364" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V2">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_7">
-            <ui:RetryScope DisplayName="Retry Scope 'Enter Item Number'" sap:VirtualizedContainerService.HintSize="463.333333333333,748.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
+            <ui:RetryScope DisplayName="Retry Scope 'Enter Item Number'" sap:VirtualizedContainerService.HintSize="400,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action Retry Scope 'Enter Item Number'" sap:VirtualizedContainerService.HintSize="421.333333333333,566" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -160,7 +160,7 @@
               </ui:RetryScope.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -168,10 +168,13 @@
           </Sequence>
         </ActivityAction>
       </p:CVScope.Body>
+      <p:CVScope.DesignTimeCache>
+        <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+      </p:CVScope.DesignTimeCache>
       <p:CVScope.DesignTimeCacheContainer>
         <uc:CvCacheContainer>
           <uc:CvCacheContainer.Caches>
-            <scg:List x:TypeArguments="uc:CVCache" Capacity="4">
+            <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
               <uc:CVCache DisplayName="Main Screen" Id="b5b19cbd-13e6-45d6-9fa9-c5a4d56fc404" InformativeScreenshot="52f6455938fa4957393dcb40f8305878" LogicalPosition="439, 228" OcrText="Mike Store: 00007 POS:2 31.8.2022 21:11 Hot Drink Hot Drink Blended EMERGENCY Cold Drinks Dine In Take Out Drinks STOP 1 2 3 4 5 Customer Log Off 7 8 9 Description Unit Price Qty Price Transaction Options Log On 4 5 6 CL Shift Reprint 1 2 3 Functions Receipt Fuel QTY 0 00 FoodPanda Manager No Sale Cash Payment StarMart Search FoodPanda Item Void Item KHR Payment Coffee Plus Sub-Total $1.82 Amount due: Tax: $0.18 Cancel Rounding Sale: $2.00 $0.00 Home Sale Adjustment Paid: $2.00 KHR:0 Stop Start Start All Group 1 Group 2 Pump Pump Pumps 6 f f 1 2 3 4 5 6 7 8" Position="439, 228" ScaleFactor="1.5" ScreenshotGuid="d69cbafe-f55a-4cf4-800e-b357409c9669" ServerVersion="1">
                 <uc:CVCache.CvUiElements>
                   <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="256">
@@ -442,7 +445,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5a1c9330-53c1-4774-978f-0a7d9615ecd5" InformativeScreenshot="44f8f0fe2f6ff23a3a0474d3e0105188" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&lt;webctrl omit:tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5a1c9330-53c1-4774-978f-0a7d9615ecd5" InformativeScreenshot="44f8f0fe2f6ff23a3a0474d3e0105188" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -452,6 +455,6 @@
         <InArgument x:TypeArguments="x:Boolean" />
       </p:CVScope.UseLocalServer>
     </p:CVScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ORBIS_KH_BuyDrystock_ItemNumber.xaml was completed.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ORBIS_KH_BuyDrystock_ItemNumber.xaml was completed.&quot;]" />
   </Sequence>
 </Activity>

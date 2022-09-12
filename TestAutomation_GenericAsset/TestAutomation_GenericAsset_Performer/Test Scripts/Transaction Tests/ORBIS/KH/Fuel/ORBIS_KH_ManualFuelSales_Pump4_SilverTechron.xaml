@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>590,1990</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>578,1990</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ORBIS_KH_ManualFuelSales_Fuelpoint3_Diesel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -108,7 +108,7 @@
             <ui:RetryScope DisplayName="Retry Scope 'Click Fuel button'" sap:VirtualizedContainerService.HintSize="463.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Click Fuel button'" sap:VirtualizedContainerService.HintSize="421.333333333333,534" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="Action Retry Scope 'Click Fuel button'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -273,7 +273,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '4' (74,146,9,10)&quot; +&#xD;&#xA;&quot;Anchor: Text '2' (74,101,8,11)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Select Pump' (74,56,59,10)&quot; +&#xD;&#xA;&quot;Anchor: Text '3' (74,124,8,10)&quot; +&#xD;&#xA;&quot;Anchor: Text '1' (75,78,6,11)&quot;]" DesignTimeCacheId="2ea264bf-c937-41fb-a024-d482d4c1c8a6" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text 'Pump 4'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_5" InformativeScreenshot="7771b4b38215efc1922c951d344cb9f2" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '4' (74,146,9,10)&quot; +&#xA;&quot;Anchor: Text '2' (74,101,8,11)&quot; +&#xA;&quot;Anchor: Text 'Select Pump' (74,56,59,10)&quot; +&#xA;&quot;Anchor: Text '3' (74,124,8,10)&quot; +&#xA;&quot;Anchor: Text '1' (75,78,6,11)&quot;]" DesignTimeCacheId="2ea264bf-c937-41fb-a024-d482d4c1c8a6" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text 'Pump 4'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_5" InformativeScreenshot="7771b4b38215efc1922c951d344cb9f2" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -481,9 +481,7 @@
                     </ui:InvokeWorkflowFile>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_ORBIS_Keypad_ManualDelivery workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_ORBIS_Keypad_ManualDelivery.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Amount">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Amount_ManualDelivery_Pump4_SilverTechron_ManualFuelSale&quot;).ToString" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Amount">[in_Config("Amount_ManualDelivery_Pump4_SilverTechron_ManualFuelSale").ToString]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
@@ -1307,7 +1305,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1f065fe-9508-4572-8da9-55b95603e904" InformativeScreenshot="3eee3326c8b554d0412eb9665cdb5c54" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&lt;webctrl omit:tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1f065fe-9508-4572-8da9-55b95603e904" InformativeScreenshot="3eee3326c8b554d0412eb9665cdb5c54" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>

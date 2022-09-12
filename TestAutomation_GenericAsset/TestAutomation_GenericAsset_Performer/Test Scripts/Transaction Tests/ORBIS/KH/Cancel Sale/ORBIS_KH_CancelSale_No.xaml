@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>590,882.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>578,882.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ORBIS_KH_KHRPayment_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -151,15 +151,9 @@
                     </p:CvClickWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                          <Literal x:TypeArguments="x:String">Cancel Sale was clicked.</Literal>
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intRetryCounter" />
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">
-                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolActionCompleted" />
-                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">Cancel Sale was clicked.</InArgument>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -180,7 +174,7 @@
             <ui:RetryScope DisplayName="Retry Scope 'Click No'" sap:VirtualizedContainerService.HintSize="400,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_6" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Click No'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Action Retry Scope 'Click No'" sap:VirtualizedContainerService.HintSize="421.333333333333,506" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,7 +186,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'No' (428,230,16,10)&quot; +&#xD;&#xA;&quot;Anchor: Button (368,218,95,37)&quot; +&#xD;&#xA;&quot;Anchor: Text 'X' (394,226,19,19)&quot;]" DesignTimeCacheId="37ced626-2542-4441-87ba-0567bd16a598" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text 'No'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_4" InformativeScreenshot="23c3eea37b12e9459c37c43703c179d9" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'No' (428,230,16,10)&quot; +&#xA;&quot;Anchor: Button (368,218,95,37)&quot; +&#xA;&quot;Anchor: Text 'X' (394,226,19,19)&quot;]" DesignTimeCacheId="37ced626-2542-4441-87ba-0567bd16a598" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text 'No'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_4" InformativeScreenshot="23c3eea37b12e9459c37c43703c179d9" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -229,15 +223,9 @@
                     </p:CvClickWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                          <Literal x:TypeArguments="x:String">No was clicked.</Literal>
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intRetryCounter" />
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">
-                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolActionCompleted" />
-                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">No was clicked.</InArgument>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -258,6 +246,9 @@
           </Sequence>
         </ActivityAction>
       </p:CVScope.Body>
+      <p:CVScope.DesignTimeCache>
+        <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+      </p:CVScope.DesignTimeCache>
       <p:CVScope.DesignTimeCacheContainer>
         <uc:CvCacheContainer>
           <uc:CvCacheContainer.Caches>
@@ -852,7 +843,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a4498513-7a5f-464f-9278-3caf6a45f80b" InformativeScreenshot="60c94bfaff927d39194717a246b321d6" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&lt;webctrl omit:tabindex='1' tag='CANVAS' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a4498513-7a5f-464f-9278-3caf6a45f80b" InformativeScreenshot="60c94bfaff927d39194717a246b321d6" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
