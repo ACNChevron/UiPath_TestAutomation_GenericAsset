@@ -83,7 +83,6 @@
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="DOMS_KH_ExpandPump4" sap:VirtualizedContainerService.HintSize="539.333333333333,1783.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -272,7 +271,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (318,64,9,10) OffsetPoint: (0,21)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (318,47,10,12)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (317,28,11,14)&quot; +&#xD;&#xA;&quot;Anchor: Text '3' (8,66,4,6)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Help' (100,13,13,8)&quot;]" DesignTimeCacheId="2266a163-4ada-4292-a0c5-c985b7cbf27a" DesignTimeScaleFactor="1.5" DisplayName="CV Click - 'ArrowButton 4'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_9" InformativeScreenshot="df647a06aaac75225740fa94be071549" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (318,64,9,10) OffsetPoint: (0,21)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (318,47,10,12)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (317,28,11,14)&quot; +&#xD;&#xA;&quot;Anchor: Text '3' (8,66,4,6)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Help' (100,13,13,8)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (6,82,8,10)&quot;]" DesignTimeCacheId="2266a163-4ada-4292-a0c5-c985b7cbf27a" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Pump 4 ArrowButton" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_9" InformativeScreenshot="ddf92fdf1563e1bbf5acefd8d692486a" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -291,6 +290,7 @@
                               <uc:CvElementDescriptor DesignTimeArea="317, 28, 11, 14" ElementType="ArrowButton" />
                               <uc:CvElementDescriptor DesignTimeArea="8, 66, 4, 6" ElementType="Text" Text="3" />
                               <uc:CvElementDescriptor DesignTimeArea="100, 13, 13, 8" ElementType="Text" Text="Help" />
+                              <uc:CvElementDescriptor DesignTimeArea="6, 82, 8, 10" ElementType="ArrowButton" />
                             </x:Array>
                           </uc:CvDescriptor.Anchors>
                           <uc:CvDescriptor.Target>

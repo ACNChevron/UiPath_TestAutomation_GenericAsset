@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>578,2423.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>578,1755.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DOMS_KH_DispenseFuel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -85,7 +85,7 @@
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DOMS_KH_DispenseFuel_Partition1" sap:VirtualizedContainerService.HintSize="539.333333333333,2358.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DOMS_KH_DispenseFuel_Partition1" sap:VirtualizedContainerService.HintSize="539.333333333333,1690.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boolActionCompleted" />
       <Variable x:TypeArguments="x:Int32" Name="intRetryCounter" />
@@ -114,17 +114,17 @@
       </If.Then>
     </If>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;DOMS_KH_DispenseFuel_Partition1.xaml was invoked.&quot;]" />
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="4efdfe5b-6d98-45e8-8f86-cb092351339d" DisplayName="CV Screen Scope 'CANVAS'" sap:VirtualizedContainerService.HintSize="497.333333333333,1792.66666666667" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V2">
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="4efdfe5b-6d98-45e8-8f86-cb092351339d" DisplayName="CV Screen Scope 'CANVAS'" sap:VirtualizedContainerService.HintSize="497.333333333333,1124.66666666667" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V2">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_5">
-            <ui:RetryScope DisplayName="Retry Scope 'Click Grade 2 button'" sap:VirtualizedContainerService.HintSize="463.333333333333,720.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
+            <ui:RetryScope DisplayName="Retry Scope 'Click Grade 1 button'" sap:VirtualizedContainerService.HintSize="463.333333333333,720.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Click Grade 2 button'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Action Retry Scope 'Click Grade 1 button'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -137,7 +137,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'G2' (133,254,13,10)&quot;]" DesignTimeCacheId="4efdfe5b-6d98-45e8-8f86-cb092351339d" DesignTimeScaleFactor="1" DisplayName="CV Click - Text 'Grade 2'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="cd16719edc8940b9398a19d6a0831de0" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Handle' (38,156,20,6) OffsetPoint: (22,1)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Norle' (12,156,19,6)&quot;]" DesignTimeCacheId="4efdfe5b-6d98-45e8-8f86-cb092351339d" DesignTimeScaleFactor="1.5" DisplayName="CV Click - G1" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="4e512486541a43a6030c34616caccd67" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -149,9 +149,14 @@
                         </ui:CursorPosition>
                       </p:CvClickWithDescriptor.CursorPosition>
                       <p:CvClickWithDescriptor.DesignTimeDescriptor>
-                        <uc:CvDescriptor>
+                        <uc:CvDescriptor TargetPointOffset="22, 1">
+                          <uc:CvDescriptor.Anchors>
+                            <x:Array Type="uc:CvElementDescriptor">
+                              <uc:CvElementDescriptor DesignTimeArea="12, 156, 19, 6" ElementType="Text" Text="Norle" />
+                            </x:Array>
+                          </uc:CvDescriptor.Anchors>
                           <uc:CvDescriptor.Target>
-                            <uc:CvElementDescriptor DesignTimeArea="133, 254, 13, 10" ElementType="Text" Text="G2" />
+                            <uc:CvElementDescriptor DesignTimeArea="38, 156, 20, 6" ElementType="Text" Text="Handle" />
                           </uc:CvDescriptor.Target>
                         </uc:CvDescriptor>
                       </p:CvClickWithDescriptor.DesignTimeDescriptor>
@@ -168,7 +173,7 @@
                     </p:CvClickWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">Fuel grade 2 was clicked.</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">Fuel grade 1 was clicked.</InArgument>
                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
@@ -188,7 +193,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <ui:RetryScope DisplayName="Retry Scope 'Click Nozzle button'" sap:VirtualizedContainerService.HintSize="463.333333333333,720.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
+            <ui:RetryScope DisplayName="Retry Scope 'Click Nozzle button'" sap:VirtualizedContainerService.HintSize="463.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action Retry Scope 'Click Nozzle button'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -249,7 +254,7 @@
               </ui:RetryScope.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -264,7 +269,7 @@
         <uc:CvCacheContainer>
           <uc:CvCacheContainer.Caches>
             <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
-              <uc:CVCache DisplayName="Main Screen" Id="4efdfe5b-6d98-45e8-8f86-cb092351339d" InformativeScreenshot="4086536cf99ebee25e8f898172d2fcbc" LogicalPosition="472, 228" OcrText="Doms PumpSim 2 - X File Actions Group Window Help O_ [0] 000.00 0000000 000 = 00000000.0 ^ 2 O_ [0] 000.000 X 0000000 000 = 00000000.0 ^ 3 O_ [2] 000.000 X 0000000 000 = 00000000 ^ price 1: 003. 930 Amount: 00000000.00 16:25:09 CET_DICIMAL_POS:2,3,3 price 2: 002 060 16:25:09 ST_PRICES:3930,2060,4700,999999,999999,999999 Volume: 0000000.000 3 price 3: 004. 4.700 16:25:09 SET_CONTROLLER_PRESET:NO_L BTSTATUS:INOPERATIVE Price: 000.000 16:25:18 price 4: 999.999 16:25:18 GETSTATUS:IDLE price 5: 999.999 17:42:26 SET_SELEC7ED_GRADE:2 price 6 999.999 Error: 0 Group member Norle Handle G1 G2 G3 G4 65 G6 v 4 O_ [0 000 000 X 0000000 000 = 00000000 00 5 O_ [0] 000. 0000000 000 = 00000000 00 ^ 6 O_ [0] 000 .000 0000000 000 00000000. ^ 7 O_ [0] 000 X 0000000 000 = 00000000. ^ 8 O_ [0 000.000 X 0000000 000 = 00000000.0 ^ 9 O_ [0] 000.000 X 0000000 000 = 00000000. ^ 10 O_ [0 000.000 X 0000000. = 00000000.00 ^ 11 O_ [0 000.000 X 0000000 000 = 00000000.00 ^ 12 O_ [0] 000.000 X 0000000 000 = 00000000.00 ^ 13 O_ [0] 000.000 X 0000000 000 = 00000000.0 ^ 14 ON_ [0] 000.000 X 0000000 000 = 00000000. ^ 15 O_ [0] 000 X 0000000 000 = 00000000 00 ^ 16 O_ [0 000 000 X 0000000 000 = 00000000 00 ^ 17 O_ [0] 000 X 0000000 000 = 00000000 00 ^ 18 O_ [0] 000 000 X 0000000 000 = 00000000 00 ^ 19 O_ [0] X 0000000 000 = 00000000 00 ^ 20 O_ [0] 000. 000 X 0000000 000 = 00000000 00 ^ 21 O_ [0 000.000 X 0000000 000 = 00000000. Connected sequencers: Connected PSS. 192.168.0.100 5:48 PM Type here to search X 26°C Cloudy ^ 4) 9/2/2022 2" Position="472, 228" ScaleFactor="1.5" ScreenshotGuid="011526e1-3dc2-49d7-b2a4-8fe5a5288ef5" ServerVersion="1">
+              <uc:CVCache DisplayName="Main Screen" Id="4efdfe5b-6d98-45e8-8f86-cb092351339d" InformativeScreenshot="4086536cf99ebee25e8f898172d2fcbc" LogicalPosition="623, 393" OcrText="Doms PumpSim 2 - X File Actions Group Window Help O_ [0] 000.00 0000000 000 = 00000000.0 ^ 2 O_ [0] 000.000 X 0000000 000 = 00000000.0 ^ 3 O_ [2] 000.000 X 0000000 000 = 00000000 ^ price 1: 003. 930 Amount: 00000000.00 16:25:09 CET_DICIMAL_POS:2,3,3 price 2: 002 060 16:25:09 ST_PRICES:3930,2060,4700,999999,999999,999999 Volume: 0000000.000 3 price 3: 004. 4.700 16:25:09 SET_CONTROLLER_PRESET:NO_L BTSTATUS:INOPERATIVE Price: 000.000 16:25:18 price 4: 999.999 16:25:18 GETSTATUS:IDLE price 5: 999.999 17:42:26 SET_SELEC7ED_GRADE:2 price 6 999.999 Error: 0 Group member Norle Handle G1 G2 G3 G4 65 G6 v 4 O_ [0 000 000 X 0000000 000 = 00000000 00 5 O_ [0] 000. 0000000 000 = 00000000 00 ^ 6 O_ [0] 000 .000 0000000 000 00000000. ^ 7 O_ [0] 000 X 0000000 000 = 00000000. ^ 8 O_ [0 000.000 X 0000000 000 = 00000000.0 ^ 9 O_ [0] 000.000 X 0000000 000 = 00000000. ^ 10 O_ [0 000.000 X 0000000. = 00000000.00 ^ 11 O_ [0 000.000 X 0000000 000 = 00000000.00 ^ 12 O_ [0] 000.000 X 0000000 000 = 00000000.00 ^ 13 O_ [0] 000.000 X 0000000 000 = 00000000.0 ^ 14 ON_ [0] 000.000 X 0000000 000 = 00000000. ^ 15 O_ [0] 000 X 0000000 000 = 00000000 00 ^ 16 O_ [0 000 000 X 0000000 000 = 00000000 00 ^ 17 O_ [0] 000 X 0000000 000 = 00000000 00 ^ 18 O_ [0] 000 000 X 0000000 000 = 00000000 00 ^ 19 O_ [0] X 0000000 000 = 00000000 00 ^ 20 O_ [0] 000. 000 X 0000000 000 = 00000000 00 ^ 21 O_ [0 000.000 X 0000000 000 = 00000000. Connected sequencers: Connected PSS. 192.168.0.100 5:48 PM Type here to search X 26°C Cloudy ^ 4) 9/2/2022 2" Position="623, 393" ScaleFactor="1.5" ScreenshotGuid="011526e1-3dc2-49d7-b2a4-8fe5a5288ef5" ServerVersion="1">
                 <uc:CVCache.CvTables>
                   <x:Array Type="uc:CvTableInfo">
                     <uc:CvTableInfo>
@@ -1039,6 +1044,6 @@
         <InArgument x:TypeArguments="x:Boolean" />
       </p:CVScope.UseLocalServer>
     </p:CVScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;DOMS_KH_DispenseFuel_Partition1.xaml was completed&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;DOMS_KH_DispenseFuel_Partition1.xaml was completed&quot;]" />
   </Sequence>
 </Activity>
