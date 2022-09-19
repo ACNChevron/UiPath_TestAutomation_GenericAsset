@@ -1,7 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ORBIS_KH_KHRPayment" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.microsoft.com/workflow/2012/07/xaml/activities" xmlns:p2="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:this="clr-namespace:" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="out_AmounDuetInKHR" Type="OutArgument(x:String)" />
+    <x:Property Name="out_AmounDueInKHR" Type="OutArgument(x:String)" />
   </x:Members>
   <this:ORBIS_KH_KHRPayment.in_Config>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>578,1068</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>570,1068</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ORBIS_KH_KHRPayment_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -85,7 +85,6 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="ORBIS_KH_KHRPayment" sap:VirtualizedContainerService.HintSize="476,1003.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -195,7 +194,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (555,206,78,20)&quot; +&#xA;&quot;Anchor: Text 'Amount in KHR:' (378,208,128,15)&quot;]" DesignTimeCacheId="b86ee0ea-de3b-467e-80b1-e0dbf360d004" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text 'Amount in KHR'" sap:VirtualizedContainerService.HintSize="379.333333333333,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="5fa43ea0274ae3864f98969b2e8529f3" RefreshBefore="True" Result="[out_AmounDuetInKHR]" Version="V2">
+                    <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (555,206,78,20)&quot; +&#xA;&quot;Anchor: Text 'Amount in KHR:' (378,208,128,15)&quot;]" DesignTimeCacheId="b86ee0ea-de3b-467e-80b1-e0dbf360d004" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text 'Amount in KHR'" sap:VirtualizedContainerService.HintSize="379.333333333333,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="5fa43ea0274ae3864f98969b2e8529f3" RefreshBefore="True" Result="[out_AmounDueInKHR]" Version="V2">
                       <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
                           <uc:CvDescriptor.Anchors>
@@ -211,7 +210,7 @@
                     </p:CvGetTextWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">["Amount in KHR '"+out_AmounDuetInKHR+"' was stored."]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">["Amount in KHR '"+out_AmounDueInKHR+"' was stored."]</InArgument>
                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
@@ -246,26 +245,26 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <If Condition="[out_AmounDuetInKHR.Contains(&quot;.&quot;)]" DisplayName="If out_AmounDuetInKHR.Contains(&quot;.&quot;)" sap:VirtualizedContainerService.HintSize="484,212.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[out_AmounDueInKHR.Contains(&quot;.&quot;)]" DisplayName="If out_AmounDuetInKHR.Contains(&quot;.&quot;)" sap:VirtualizedContainerService.HintSize="484,212.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
                         <Assign DisplayName="Assign 'out_AmounDuetInKHR'" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_1">
                           <Assign.To>
-                            <OutArgument x:TypeArguments="x:String">[out_AmounDuetInKHR]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String">[out_AmounDueInKHR]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">[out_AmounDuetInKHR.Substring(0, out_AmounDuetInKHR.IndexOf("."))]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[out_AmounDueInKHR.Substring(0, out_AmounDueInKHR.IndexOf("."))]</InArgument>
                           </Assign.Value>
                         </Assign>
                       </If.Then>
                     </If>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_ORBIS_Keypad_ForeignCurrency workflow" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_ORBIS_Keypad_ForeignCurrency.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Amount">[out_AmounDuetInKHR]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Amount">[out_AmounDueInKHR]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">["Amount in KHR '"+out_AmounDuetInKHR+"' was entered."]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">["Amount in KHR '"+out_AmounDueInKHR+"' was entered."]</InArgument>
                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
