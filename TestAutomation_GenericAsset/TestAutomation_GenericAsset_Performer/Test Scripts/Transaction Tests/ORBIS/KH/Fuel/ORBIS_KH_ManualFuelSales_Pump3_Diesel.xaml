@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>578,2654</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>570.666666666667,2654</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ORBIS_KH_ManualFuelSales_Fuelpoint3_Diesel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -84,7 +84,6 @@
       <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="ORBIS_KH_ManualFuelSales_Fuelpoint3_Diesel" sap:VirtualizedContainerService.HintSize="539.333333333333,2589.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -187,7 +186,7 @@
             <ui:RetryScope DisplayName="Retry Scope 'Click Manual Fuel Sales button'" sap:VirtualizedContainerService.HintSize="463.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Click Manual Fuel Sales button'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Action Retry Scope 'Click Manual Fuel Sales button'" sap:VirtualizedContainerService.HintSize="421.333333333333,506" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -261,7 +260,7 @@
             <ui:RetryScope DisplayName="Retry Scope 'Select Pump'" sap:VirtualizedContainerService.HintSize="463.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Select Pump'" sap:VirtualizedContainerService.HintSize="421.333333333333,534" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Action Retry Scope 'Select Pump'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -273,7 +272,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '3' (74,124,8,10)&quot; +&#xA;&quot;Anchor: Text '2' (74,101,8,11)&quot; +&#xA;&quot;Anchor: Text '1' (75,78,6,11)&quot; +&#xA;&quot;Anchor: Text 'Select Pump' (74,56,59,10)&quot;]" DesignTimeCacheId="2ea264bf-c937-41fb-a024-d482d4c1c8a6" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text 'Pump 3'" sap:VirtualizedContainerService.HintSize="379.333333333333,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_5" InformativeScreenshot="d2bdc67f42a02a973e5e9cce0f5271b2" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '3' (74,124,8,10)&quot; +&#xA;&quot;Anchor: Text '2' (74,101,8,11)&quot; +&#xA;&quot;Anchor: Text '1' (75,78,6,11)&quot; +&#xA;&quot;Anchor: Text 'Select Pump' (74,56,59,10)&quot;]" DesignTimeCacheId="2ea264bf-c937-41fb-a024-d482d4c1c8a6" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text 'Pump 3'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_5" InformativeScreenshot="d2bdc67f42a02a973e5e9cce0f5271b2" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -309,7 +308,7 @@
                         </ui:Target>
                       </p:CvClickWithDescriptor.Target>
                     </p:CvClickWithDescriptor>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">Pump 3 was selected.</InArgument>
                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
@@ -334,13 +333,13 @@
             <ui:RetryScope DisplayName="Retry Scope 'Select Grade'" sap:VirtualizedContainerService.HintSize="463.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Select Grade'" sap:VirtualizedContainerService.HintSize="421.333333333333,532" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Action Retry Scope 'Select Grade'" sap:VirtualizedContainerService.HintSize="421.333333333333,534" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Increment workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Increment.xaml">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Increment workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Increment.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryCounter">[intRetryCounter]</InOutArgument>
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
@@ -400,13 +399,13 @@
             <ui:RetryScope DisplayName="Retry Scope 'Select Sale Type'" sap:VirtualizedContainerService.HintSize="463.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Select Sale Type'" sap:VirtualizedContainerService.HintSize="420.666666666667,532" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Action Retry Scope 'Select Sale Type'" sap:VirtualizedContainerService.HintSize="421.333333333333,534" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Increment workflow" sap:VirtualizedContainerService.HintSize="378.666666666667,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Increment.xaml">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Increment workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Increment.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryCounter">[intRetryCounter]</InOutArgument>
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
@@ -520,7 +519,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'OK' (281,320,21,12)&quot;]" DesignTimeCacheId="2ea264bf-c937-41fb-a024-d482d4c1c8a6" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text 'OK'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_9" InformativeScreenshot="1560b54a6fc3188b2829dabf44a6c829" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'OK' (281,320,21,12)&quot; +&#xD;&#xA;&quot;Anchor: Icon (235,312,30,32)&quot;]" DesignTimeCacheId="2ea264bf-c937-41fb-a024-d482d4c1c8a6" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_9" InformativeScreenshot="8c69aab6e15d331aac27a04fcd7dc104" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -533,6 +532,11 @@
                       </p:CvClickWithDescriptor.CursorPosition>
                       <p:CvClickWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
+                          <uc:CvDescriptor.Anchors>
+                            <x:Array Type="uc:CvElementDescriptor">
+                              <uc:CvElementDescriptor DesignTimeArea="235, 312, 30, 32" ElementType="Icon" ImageBase64="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" />
+                            </x:Array>
+                          </uc:CvDescriptor.Anchors>
                           <uc:CvDescriptor.Target>
                             <uc:CvElementDescriptor DesignTimeArea="281, 320, 21, 12" ElementType="Text" Text="OK" />
                           </uc:CvDescriptor.Target>
@@ -1092,7 +1096,7 @@
                   </scg:List>
                 </uc:CVCache.OcrTexts>
               </uc:CVCache>
-              <uc:CVCache DisplayName="Screen CV Element Exists - 'Se" Id="2ea264bf-c937-41fb-a024-d482d4c1c8a6" InformativeScreenshot="9ce91ac66651ac6e79b5f65faf1b05f0" LogicalPosition="150, 186" OcrText="Mike Store: 00007 POS:1 7.7.2022 18:12 ENCY Frui .Veg Manual Delivery Select Pump Select Grade: Price 1 1 Diesel Qty/Ltr: Description 2 Silver Techron Amount: 3 Gold Techron 4 7 8 9 CL 5 Select Sale Type 4 5 6 I 6 7 Manual Fuel Sale 8 Resale 1 2 3 Enter Refund IPanda 0 CE trMart PPalMa ee Plus OK X Cancel inding 3ait. AC.UU Home Aajustment Paid: $2.00 KHR:0 Stop Start Start All Group 1 Group 2 Pump Pump Pumps X X 1 2 3 4 5 6 7 8" Position="226, 280" ScaleFactor="1.5" ScreenshotGuid="a9de4c61-8c4c-42fc-80cd-5acb658f2190" ServerVersion="1">
+              <uc:CVCache DisplayName="Screen CV Element Exists - 'Se" Id="2ea264bf-c937-41fb-a024-d482d4c1c8a6" InformativeScreenshot="9ce91ac66651ac6e79b5f65faf1b05f0" LogicalPosition="438, 192" OcrText="Mike Store: 00007 POS:1 7.7.2022 18:12 ENCY Frui .Veg Manual Delivery Select Pump Select Grade: Price 1 1 Diesel Qty/Ltr: Description 2 Silver Techron Amount: 3 Gold Techron 4 7 8 9 CL 5 Select Sale Type 4 5 6 I 6 7 Manual Fuel Sale 8 Resale 1 2 3 Enter Refund IPanda 0 CE trMart PPalMa ee Plus OK X Cancel inding 3ait. AC.UU Home Aajustment Paid: $2.00 KHR:0 Stop Start Start All Group 1 Group 2 Pump Pump Pumps X X 1 2 3 4 5 6 7 8" Position="438, 192" ScaleFactor="1.5" ScreenshotGuid="a9de4c61-8c4c-42fc-80cd-5acb658f2190" ServerVersion="1">
                 <uc:CVCache.CvUiElements>
                   <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="128">
                     <uc:CvElementInfo Category="Button" Region="456, 214, 41, 41" />
@@ -1304,7 +1308,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1f065fe-9508-4572-8da9-55b95603e904" InformativeScreenshot="3eee3326c8b554d0412eb9665cdb5c54" Selector="[in_Config(&quot;Selector_CVScreenScope&quot;).ToString]" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1f065fe-9508-4572-8da9-55b95603e904" InformativeScreenshot="3eee3326c8b554d0412eb9665cdb5c54" Selector="&lt;html app='msedge.exe' title='Web Rep Console*' /&gt;&#xD;&#xA;&lt;webctrl tag='DIV' class='p-tabview-panel ng-star-inserted' id='bt-tab-panel-*'   aria-hidden='false' /&gt;&#xD;&#xA;&lt;webctrl tag='DIV' class='p-tabview-panel ng-star-inserted' id='p-tabpanel-*' aria-hidden='false'  /&gt;&#xD;&#xA;&lt;webctrl tag='DIV' class='screenSharingContainer dot-cursor' style='visibility: visible;' /&gt;&#xD;&#xA;&lt;webctrl tag='CANVAS' class='remotePointerCanvas' /&gt;&#xD;&#xA;" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
