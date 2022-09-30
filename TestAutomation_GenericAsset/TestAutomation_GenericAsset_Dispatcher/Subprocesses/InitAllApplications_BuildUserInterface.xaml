@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>563.333333333333,6644.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>623.333333333333,5964</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InitAllApplications_BuildUserInterface_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -73,7 +73,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InitAllApplications_BuildUserInterface" sap:VirtualizedContainerService.HintSize="633.333333333333,5656" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InitAllApplications_BuildUserInterface" sap:VirtualizedContainerService.HintSize="633.333333333333,5899.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strHTML" />
       <Variable x:TypeArguments="x:String" Name="strReadHTMLFile" />
@@ -288,7 +288,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each folder in Folder Location_All Tests_Table Data" sap:VirtualizedContainerService.HintSize="591.333333333333,1160.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Directory.GetDirectories(in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;Table_All Tests_Table Data&quot;)]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each folder in Folder Location_All Tests_Table Data" sap:VirtualizedContainerService.HintSize="541.333333333333,1160.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Directory.GetDirectories(in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;Table_All Tests_Table Data&quot;)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
