@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>561.333333333333,2218.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>561.333333333333,4338.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ORBIS_KH_ManualFuelSales_Fuelpoint3_Diesel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -84,10 +84,9 @@
       <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ORBIS_KH_SafeDrop" sap:VirtualizedContainerService.HintSize="539.333333333333,2154" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ORBIS_KH_SafeDrop" sap:VirtualizedContainerService.HintSize="539.333333333333,4274" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boolActionCompleted" />
       <Variable x:TypeArguments="x:Int32" Name="intRetryCounter" />
@@ -116,7 +115,7 @@
       </If.Then>
     </If>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ORBIS_KH_SafeDrop.xaml was invoked.&quot;]" />
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="9876e6ae-f3f5-4f2b-b006-cf537bfd7ceb" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="497.333333333333,1588" sap2010:WorkflowViewState.IdRef="CVScope_3" Version="V2">
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" DesignTimeCacheId="9876e6ae-f3f5-4f2b-b006-cf537bfd7ceb" DisplayName="CV Screen Scope 'ORBIS'" sap:VirtualizedContainerService.HintSize="497.333333333333,3708" sap2010:WorkflowViewState.IdRef="CVScope_3" Version="V2">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -126,7 +125,7 @@
             <ui:RetryScope DisplayName="Retry Scope 'Click Shift Functions'" sap:VirtualizedContainerService.HintSize="463.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_9" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action Retry Scope 'Click Shift Functions'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <Sequence DisplayName="Action Retry Scope 'Click Shift Functions'" sap:VirtualizedContainerService.HintSize="421.333333333333,506" sap2010:WorkflowViewState.IdRef="Sequence_13">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,15 +169,9 @@
                     </p:CvClickWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                          <Literal x:TypeArguments="x:String">Shift Functions was clicked.</Literal>
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intRetryCounter" />
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">
-                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolActionCompleted" />
-                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">Shift Functions was clicked.</InArgument>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -212,7 +205,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Safe Drop' (356,190,51,12)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Close Shift' (352,233,58,10)&quot;]" DesignTimeCacheId="b9234bac-c858-4db9-b11a-08d41054258f" DesignTimeScaleFactor="1.5" DisplayName="CV Click - 'Safe Drop'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_13" InformativeScreenshot="e0214ce224b3e18bfb54f687b2f8e750" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Safe Drop' (356,190,51,12)&quot; +&#xA;&quot;Anchor: Text 'Close Shift' (352,233,58,10)&quot;]" DesignTimeCacheId="b9234bac-c858-4db9-b11a-08d41054258f" DesignTimeScaleFactor="1.5" DisplayName="CV Click - 'Safe Drop'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_13" InformativeScreenshot="e0214ce224b3e18bfb54f687b2f8e750" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -248,15 +241,9 @@
                     </p:CvClickWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                          <Literal x:TypeArguments="x:String">Safe Drop was clicked.</Literal>
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intRetryCounter" />
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">
-                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolActionCompleted" />
-                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">Safe Drop was clicked.</InArgument>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -290,7 +277,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvTypeIntoWithDescriptor DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (262,93,154,20)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Amount:' (262,82,40,9)&quot;]" DesignTimeCacheId="e1cded00-6007-4e5e-bf20-5cc8b43fd86c" DesignTimeScaleFactor="1.5" DisplayName="CV Type Into - 'Amount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="379.333333333333,166" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="7d50be279de40f04efe2c7d78d3ece04" Text="[in_Config(&quot;Amount_SafeDropLimit&quot;).ToString]" Version="V2">
+                    <p:CvTypeIntoWithDescriptor DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (262,93,154,20)&quot; +&#xA;&quot;Anchor: Text 'Amount:' (262,82,40,9)&quot;]" DesignTimeCacheId="e1cded00-6007-4e5e-bf20-5cc8b43fd86c" DesignTimeScaleFactor="1.5" DisplayName="CV Type Into - 'Amount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="379.333333333333,166" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="7d50be279de40f04efe2c7d78d3ece04" Text="[in_Config(&quot;Amount_SafeDropLimit&quot;).ToString]" Version="V2">
                       <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
                           <uc:CvDescriptor.Anchors>
@@ -316,15 +303,9 @@
                     </p:CvTypeIntoWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                          <Literal x:TypeArguments="x:String">Safe Drop Amount was entered.</Literal>
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intRetryCounter" />
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">
-                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolActionCompleted" />
-                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">Safe Drop Amount was entered.</InArgument>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -342,7 +323,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <ui:RetryScope DisplayName="Retry Scope 'Click OK'" sap:VirtualizedContainerService.HintSize="463.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_12" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
+            <ui:RetryScope DisplayName="Retry Scope 'Click OK'" sap:VirtualizedContainerService.HintSize="463.333333333333,720.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_12" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action Retry Scope 'Click OK'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_16">
@@ -358,7 +339,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'OK' (298,324,23,13)&quot;]" DesignTimeCacheId="e1cded00-6007-4e5e-bf20-5cc8b43fd86c" DesignTimeScaleFactor="1.5" DisplayName="CV Click - 'OK&quot;" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_15" InformativeScreenshot="bdb6b029e773ec9705d2540c0540fb16" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'OK' (298,324,23,13)&quot; +&#xD;&#xA;&quot;Anchor: Icon (250,316,30,32)&quot;]" DesignTimeCacheId="e1cded00-6007-4e5e-bf20-5cc8b43fd86c" DesignTimeScaleFactor="1.5" DisplayName="CV Click - 'OK'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_15" InformativeScreenshot="ae80926a409b7266f16d85c691197d0f" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -371,6 +352,11 @@
                       </p:CvClickWithDescriptor.CursorPosition>
                       <p:CvClickWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
+                          <uc:CvDescriptor.Anchors>
+                            <x:Array Type="uc:CvElementDescriptor">
+                              <uc:CvElementDescriptor DesignTimeArea="250, 316, 30, 32" ElementType="Icon" ImageBase64="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" />
+                            </x:Array>
+                          </uc:CvDescriptor.Anchors>
                           <uc:CvDescriptor.Target>
                             <uc:CvElementDescriptor DesignTimeArea="298, 324, 23, 13" ElementType="Text" Text="OK" />
                           </uc:CvDescriptor.Target>
@@ -389,15 +375,9 @@
                     </p:CvClickWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                          <Literal x:TypeArguments="x:String">OK was clicked.</Literal>
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intRetryCounter" />
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">
-                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolActionCompleted" />
-                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">OK was clicked.</InArgument>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -410,12 +390,12 @@
               </ui:RetryScope.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <ui:RetryScope DisplayName="Retry Scope 'Click OK'" sap:VirtualizedContainerService.HintSize="463.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_13" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
+            <ui:RetryScope DisplayName="Retry Scope 'Click OK'" sap:VirtualizedContainerService.HintSize="463.333333333333,836.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_13" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action Retry Scope 'Click OK'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_17">
@@ -431,7 +411,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Icon (250,316,30,32)&quot; +&#xD;&#xA;&quot;Anchor: Text 'OK' (298,324,23,13)&quot;]" DesignTimeCacheId="e1cded00-6007-4e5e-bf20-5cc8b43fd86c" DesignTimeScaleFactor="1.5" DisplayName="CV Click - 'OK'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_16" InformativeScreenshot="3780619cc296b71c61b7386ad63ec9fd" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Icon (250,316,30,32)&quot; +&#xA;&quot;Anchor: Text 'OK' (298,324,23,13)&quot;]" DesignTimeCacheId="e1cded00-6007-4e5e-bf20-5cc8b43fd86c" DesignTimeScaleFactor="1.5" DisplayName="CV Click - 'OK'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_16" InformativeScreenshot="3780619cc296b71c61b7386ad63ec9fd" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -477,17 +457,25 @@
               </ui:RetryScope.ActivityBody>
               <ui:RetryScope.Condition>
                 <ActivityFunc x:TypeArguments="x:Boolean">
-                  <p1:IsTrue DisplayName="Is true 'boolActionCompleted'" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="IsTrue_6" Input="[boolActionCompleted]" />
+                  <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Confirmation' (287,143,120,17)&quot;]" DesignTimeCacheId="9e21088b-0c3b-4d0c-9f97-483c31ae399b" DesignTimeScaleFactor="1.5" DisplayName="CV Element Exists - 'Confirmation'" sap:VirtualizedContainerService.HintSize="334,138" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="e348b1afee47e4a6411a2763fdd29f0c" Version="V2">
+                    <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                      <uc:CvDescriptor>
+                        <uc:CvDescriptor.Target>
+                          <uc:CvElementDescriptor DesignTimeArea="287, 143, 120, 17" ElementType="Text" Text="Confirmation" />
+                        </uc:CvDescriptor.Target>
+                      </uc:CvDescriptor>
+                    </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                  </p:CvElementExistsWithDescriptor>
                 </ActivityFunc>
               </ui:RetryScope.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <ui:RetryScope DisplayName="Retry Scope 'Click OK'" sap:VirtualizedContainerService.HintSize="463.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_14" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
+            <ui:RetryScope DisplayName="Retry Scope 'Click OK'" sap:VirtualizedContainerService.HintSize="463.333333333333,720.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_14" NumberOfRetries="[Convert.ToInt32(in_Config(&quot;NumberOfRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;RetryInterval&quot;).ToString)]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action Retry Scope 'Click OK'" sap:VirtualizedContainerService.HintSize="421.333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_18">
@@ -503,7 +491,7 @@
                         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Ok' (294,228,20,13)&quot;]" DesignTimeCacheId="9e21088b-0c3b-4d0c-9f97-483c31ae399b" DesignTimeScaleFactor="1.5" DisplayName="CV Click - 'OK'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_17" InformativeScreenshot="c4d50d8b41c698f4c979cc3999c55127" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Ok' (294,228,20,13)&quot; +&#xD;&#xA;&quot;Anchor: Icon (254,221,31,30)&quot;]" DesignTimeCacheId="9e21088b-0c3b-4d0c-9f97-483c31ae399b" DesignTimeScaleFactor="1.5" DisplayName="CV Click - 'OK'" sap:VirtualizedContainerService.HintSize="379.333333333333,138" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_17" InformativeScreenshot="2931c7d7ae1649efc2436a5298b8c70e" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V2">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -516,6 +504,11 @@
                       </p:CvClickWithDescriptor.CursorPosition>
                       <p:CvClickWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
+                          <uc:CvDescriptor.Anchors>
+                            <x:Array Type="uc:CvElementDescriptor">
+                              <uc:CvElementDescriptor DesignTimeArea="254, 221, 31, 30" ElementType="Icon" ImageBase64="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" />
+                            </x:Array>
+                          </uc:CvDescriptor.Anchors>
                           <uc:CvDescriptor.Target>
                             <uc:CvElementDescriptor DesignTimeArea="294, 228, 20, 13" ElementType="Text" Text="Ok" />
                           </uc:CvDescriptor.Target>
@@ -534,15 +527,9 @@
                     </p:CvClickWithDescriptor>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UTL_RETRYCOUNTER_Reset workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Test Scripts\Utilities\UTL_RETRYCOUNTER_Reset.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                          <Literal x:TypeArguments="x:String">OK was clicked.</Literal>
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intRetryCounter" />
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">
-                          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolActionCompleted" />
-                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">OK was clicked.</InArgument>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_RetryCounter">[intRetryCounter]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ActionCompleted">[boolActionCompleted]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -555,7 +542,7 @@
               </ui:RetryScope.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -630,11 +617,14 @@
           </Sequence>
         </ActivityAction>
       </p:CVScope.Body>
+      <p:CVScope.DesignTimeCache>
+        <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+      </p:CVScope.DesignTimeCache>
       <p:CVScope.DesignTimeCacheContainer>
         <uc:CvCacheContainer>
           <uc:CvCacheContainer.Caches>
-            <scg:List x:TypeArguments="uc:CVCache" Capacity="8">
-              <uc:CVCache DisplayName="Main Screen" Id="9876e6ae-f3f5-4f2b-b006-cf537bfd7ceb" InformativeScreenshot="403f1efac66e78440055432097c89f51" LogicalPosition="439, 228" OcrText="Safe Drop Mike Store: 00007 POS:2 10.10.2022 20:12 Hot Drink Hot Drink Blended EMERGENCY Cold Drinks Dine In Take Out Drinks STOP 2 3 4 5 Customer Log Off 7 8 9 Description Unit Price Qty Price Transaction Options Log On 4 5 6 CL Shift Reprint 1 2 3 Functions Receipt Fuel QTY 0 00 I FoodPanda Manager No Sale Cash Payment StarMart Search FoodPanda Item Void Item KHR Payment Coffee Plus Sub- Total $1.82 Amount due: Tax: $0.18 Cancel Rounding Sale: $2.00 $0.00 Sale Adjustment Paid: $2.00 KHR:0 Home Stop Start Start All Group 1 Group 2 Pump Pump Pumps 1 2 3 4 5 6 7 8" Position="439, 228" ScaleFactor="1.5" ScreenshotGuid="0e6ee475-e04a-42ca-bca7-88d7fa969ec5" ServerVersion="1">
+            <scg:List x:TypeArguments="uc:CVCache" Capacity="5">
+              <uc:CVCache DisplayName="Main Screen" Id="9876e6ae-f3f5-4f2b-b006-cf537bfd7ceb" InformativeScreenshot="403f1efac66e78440055432097c89f51" LogicalPosition="439, 192" OcrText="Safe Drop Mike Store: 00007 POS:2 10.10.2022 20:12 Hot Drink Hot Drink Blended EMERGENCY Cold Drinks Dine In Take Out Drinks STOP 2 3 4 5 Customer Log Off 7 8 9 Description Unit Price Qty Price Transaction Options Log On 4 5 6 CL Shift Reprint 1 2 3 Functions Receipt Fuel QTY 0 00 I FoodPanda Manager No Sale Cash Payment StarMart Search FoodPanda Item Void Item KHR Payment Coffee Plus Sub- Total $1.82 Amount due: Tax: $0.18 Cancel Rounding Sale: $2.00 $0.00 Sale Adjustment Paid: $2.00 KHR:0 Home Stop Start Start All Group 1 Group 2 Pump Pump Pumps 1 2 3 4 5 6 7 8" Position="439, 192" ScaleFactor="1.5" ScreenshotGuid="0e6ee475-e04a-42ca-bca7-88d7fa969ec5" ServerVersion="1">
                 <uc:CVCache.CvUiElements>
                   <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="256">
                     <uc:CvElementInfo Category="Icon" Region="369, 350, 24, 22" />
@@ -1202,7 +1192,7 @@
                   </scg:List>
                 </uc:CVCache.OcrTexts>
               </uc:CVCache>
-              <uc:CVCache DisplayName="Screen CV Type Into - 'Amount:" Id="e1cded00-6007-4e5e-bf20-5cc8b43fd86c" InformativeScreenshot="0586e8e63b902d3638f2f3ee777955e8" LogicalPosition="439, 228" OcrText="Safe Drop Mike Store: 00007 POS:2 10.10.2022 20:15 Hot Drink Hot Drink Ble EMERGENCY Cold Drinks Dine In Take Out Dr Safe Drop STOP 2 3 Amount: 0 ay 7 8 9 Description Unit Price 7 8 9 nt h 4 5 6 CL tion 4 5 6 1 2 3 1 2 3 Enter 0 00 I FoodPanda 0 CE Cash Payment StarMart KHR Payment FoodPanda OK X Cancel Coffee Plus Sub- Total $1.82 Tax: $0.18 Rounding Sale: $2.00 $0.00 Home Adjustment Paid: $2.00 KHR:0 Stop Start Start All Group 1 Group 2 Pump Pump Pumps 1 2 3 4 5 6 7 8" Position="439, 228" ScaleFactor="1.5" ScreenshotGuid="725735f8-1dba-43ba-bcc6-97757c80913e" ServerVersion="1">
+              <uc:CVCache DisplayName="Screen CV Type Into - 'Amount:" Id="e1cded00-6007-4e5e-bf20-5cc8b43fd86c" InformativeScreenshot="0586e8e63b902d3638f2f3ee777955e8" LogicalPosition="439, 192" OcrText="Safe Drop Mike Store: 00007 POS:2 10.10.2022 20:15 Hot Drink Hot Drink Ble EMERGENCY Cold Drinks Dine In Take Out Dr Safe Drop STOP 2 3 Amount: 0 ay 7 8 9 Description Unit Price 7 8 9 nt h 4 5 6 CL tion 4 5 6 1 2 3 1 2 3 Enter 0 00 I FoodPanda 0 CE Cash Payment StarMart KHR Payment FoodPanda OK X Cancel Coffee Plus Sub- Total $1.82 Tax: $0.18 Rounding Sale: $2.00 $0.00 Home Adjustment Paid: $2.00 KHR:0 Stop Start Start All Group 1 Group 2 Pump Pump Pumps 1 2 3 4 5 6 7 8" Position="439, 192" ScaleFactor="1.5" ScreenshotGuid="725735f8-1dba-43ba-bcc6-97757c80913e" ServerVersion="1">
                 <uc:CVCache.CvUiElements>
                   <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="256">
                     <uc:CvElementInfo Category="Button" Region="305, 167, 43, 44" />
@@ -1489,7 +1479,7 @@
                   </scg:List>
                 </uc:CVCache.OcrTexts>
               </uc:CVCache>
-              <uc:CVCache DisplayName="Screen CV Click - 'Ok'" Id="9e21088b-0c3b-4d0c-9f97-483c31ae399b" InformativeScreenshot="e955e22735a4bf133a0f98f4430ba8dc" LogicalPosition="439, 228" OcrText="Safe Drop Mike Store: 00007 POS:2 10.10.2022 20:20 Hot Drink Hot Drink Blended EMERGENCY Cold Drinks Dine In Take Out Drinks STOP 2 3 4 5 End Day 7 8 9 Description Unit Price Qty Price Confirmation 4 5 6 CL Safe Drop $2,000.00 and KHR0.00? 1 2 3 Ok X Cancel 0 00 I FoodPanda Cash Payment StarMart FoodPanda KHR Payment Coffee Plus Sub- Total $1.82 Amount due: Tax: $0.18 Rounding Sale: $2.00 $0.00 Adjustment Paid: $2.00 KHR:0 Home Stop Start Start All Group 1 Group 2 Pump Pump Pumps 1 2 3 4 5 6 7 8" Position="439, 228" ScaleFactor="1.5" ScreenshotGuid="08490cde-8bd8-4eee-aff2-231305485cde" ServerVersion="1">
+              <uc:CVCache DisplayName="Screen CV Click - 'Ok'" Id="9e21088b-0c3b-4d0c-9f97-483c31ae399b" InformativeScreenshot="e955e22735a4bf133a0f98f4430ba8dc" LogicalPosition="439, 192" OcrText="Safe Drop Mike Store: 00007 POS:2 10.10.2022 20:20 Hot Drink Hot Drink Blended EMERGENCY Cold Drinks Dine In Take Out Drinks STOP 2 3 4 5 End Day 7 8 9 Description Unit Price Qty Price Confirmation 4 5 6 CL Safe Drop $2,000.00 and KHR0.00? 1 2 3 Ok X Cancel 0 00 I FoodPanda Cash Payment StarMart FoodPanda KHR Payment Coffee Plus Sub- Total $1.82 Amount due: Tax: $0.18 Rounding Sale: $2.00 $0.00 Adjustment Paid: $2.00 KHR:0 Home Stop Start Start All Group 1 Group 2 Pump Pump Pumps 1 2 3 4 5 6 7 8" Position="439, 192" ScaleFactor="1.5" ScreenshotGuid="08490cde-8bd8-4eee-aff2-231305485cde" ServerVersion="1">
                 <uc:CVCache.CvUiElements>
                   <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="256">
                     <uc:CvElementInfo Category="Icon" Region="369, 350, 24, 22" />
@@ -1755,7 +1745,7 @@
                   </scg:List>
                 </uc:CVCache.OcrTexts>
               </uc:CVCache>
-              <uc:CVCache DisplayName="Screen CV Click - 'Home'" Id="8af81477-e947-4d19-8ef6-39108a9eb849" InformativeScreenshot="ff60a78bc764251f5dc014cda62b8a91" LogicalPosition="439, 228" OcrText="Mike Store: 00007 POS:2 10.10.2022 20:22 Hot Drink Hot Drink Blended EMERGENCY Cold Drinks Dine In Take Out Drinks STOP 2 3 4 5 End Day 7 8 9 Description Unit Price Qty Price Declare Reprint Cash 4 5 6 CL Cash Declaration Safe Drop 1 2 3 Close Shift 0 00 I FoodPanda Cash Payment StarMart FoodPanda KHR Payment Coffee Plus Sub- Total $0.00 Amount due: Tax: $0.00 Rounding Sale: $0.00 $0.00 Adjustment Paid: $0.00 KHR:0 Home Stop Start Start All Group 1 Group 2 Pump Pump Pumps 1 2 3 4 5 6 7 8" Position="439, 228" ScaleFactor="1.5" ScreenshotGuid="42cc6710-bf50-4432-84b0-1a8537d0f81e" ServerVersion="1">
+              <uc:CVCache DisplayName="Screen CV Click - 'Home'" Id="8af81477-e947-4d19-8ef6-39108a9eb849" InformativeScreenshot="ff60a78bc764251f5dc014cda62b8a91" LogicalPosition="439, 192" OcrText="Mike Store: 00007 POS:2 10.10.2022 20:22 Hot Drink Hot Drink Blended EMERGENCY Cold Drinks Dine In Take Out Drinks STOP 2 3 4 5 End Day 7 8 9 Description Unit Price Qty Price Declare Reprint Cash 4 5 6 CL Cash Declaration Safe Drop 1 2 3 Close Shift 0 00 I FoodPanda Cash Payment StarMart FoodPanda KHR Payment Coffee Plus Sub- Total $0.00 Amount due: Tax: $0.00 Rounding Sale: $0.00 $0.00 Adjustment Paid: $0.00 KHR:0 Home Stop Start Start All Group 1 Group 2 Pump Pump Pumps 1 2 3 4 5 6 7 8" Position="439, 192" ScaleFactor="1.5" ScreenshotGuid="42cc6710-bf50-4432-84b0-1a8537d0f81e" ServerVersion="1">
                 <uc:CVCache.CvUiElements>
                   <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="256">
                     <uc:CvElementInfo Category="Icon" Region="369, 350, 24, 22" />
