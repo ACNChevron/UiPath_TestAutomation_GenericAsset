@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1073,2068</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>678,1948</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -78,7 +78,7 @@
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="539,2003" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="539.333333333333,1883.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="uiElementSource" />
     </Sequence.Variables>
@@ -88,7 +88,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If sap2010:Annotation.AnnotationText="This activity helps in running the xaml file independently. Developer can debug run this xaml file without passing through Main's Initialization state." Condition="[in_Config Is Nothing]" DisplayName="If in_Config Is Nothing" sap:VirtualizedContainerService.HintSize="497,153" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="This activity helps in running the xaml file independently. Developer can debug run this xaml file without passing through Main's Initialization state." Condition="[in_Config Is Nothing]" DisplayName="If in_Config Is Nothing" sap:VirtualizedContainerService.HintSize="497.333333333333,164.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -106,8 +106,8 @@
         </ui:InvokeWorkflowFile>
       </If.Then>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;InitAllApplications.xaml was invoked.&quot;]" />
-    <Assign DisplayName="Assign 'out_QueueReference'" sap:VirtualizedContainerService.HintSize="497,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:LogMessage DisplayName="Log Message &quot;InitAllApplications.xaml was invoked.&quot;" sap:VirtualizedContainerService.HintSize="497.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;InitAllApplications.xaml was invoked.&quot;]" />
+    <Assign DisplayName="Assign 'out_QueueReference'" sap:VirtualizedContainerService.HintSize="497.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_QueueReference]</OutArgument>
       </Assign.To>
@@ -115,7 +115,7 @@
         <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyyMMddHHmmss")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Queue Reference '&quot;+out_QueueReference+&quot;' was stored.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message &quot;Queue Reference '&quot;+out_QueueReference+&quot;' was stored.&quot;" sap:VirtualizedContainerService.HintSize="497.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Queue Reference '&quot;+out_QueueReference+&quot;' was stored.&quot;]" />
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitAllApplications_BuildUserInterface workflow" sap:VirtualizedContainerService.HintSize="497,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Subprocesses\InitAllApplications_BuildUserInterface.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
@@ -127,22 +127,22 @@
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:TriggerScope DisplayName="TriggerScope 'button Trigger'" sap:VirtualizedContainerService.HintSize="497,532" sap2010:WorkflowViewState.IdRef="TriggerScope_1" SchedulingMode="OneTime">
+    <ui:TriggerScope DisplayName="TriggerScope 'button Trigger'" sap:VirtualizedContainerService.HintSize="497.333333333333,541.333333333333" sap2010:WorkflowViewState.IdRef="TriggerScope_1" SchedulingMode="OneTime">
       <ui:TriggerScope.Action>
         <ActivityAction x:TypeArguments="ui:EventInfoTriggerArgs">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:EventInfoTriggerArgs" Name="args" />
           </ActivityAction.Argument>
-          <ui:GetSourceElementV2 DisplayName="Get Source Element" EventInfo="[args.EventInfo]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetSourceElementV2_1" UiElement="[uiElementSource]" />
+          <ui:GetSourceElementV2 DisplayName="Get Source Element 'args.EventInfo" EventInfo="[args.EventInfo]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetSourceElementV2_1" UiElement="[uiElementSource]" />
         </ActivityAction>
       </ui:TriggerScope.Action>
       <ui:TriggerScope.Triggers>
         <scg:List x:TypeArguments="Activity" Capacity="4">
-          <ui:ClickTriggerV2 ClippingRegion="{x:Null}" BlockEvent="False" DisplayName="Click Trigger 'button'" sap:VirtualizedContainerService.HintSize="416,202" sap2010:WorkflowViewState.IdRef="ClickTriggerV2_1" IncludeChildren="True" InformativeScreenshot="95080b30b229768baeb48638e19a9627" KeyModifiers="None" MouseButton="BTN_LEFT" Selector="[&quot;&lt;html app='msedge.exe' title='RPA Test Automation - &quot;+out_QueueReference+&quot;' /&gt;&lt;webctrl tag='BUTTON'/&gt;&quot;]" TriggerMode="TriggerDown" />
+          <ui:ClickTriggerV2 ClippingRegion="{x:Null}" BlockEvent="False" DisplayName="Click Trigger 'button'" sap:VirtualizedContainerService.HintSize="416,204.666666666667" sap2010:WorkflowViewState.IdRef="ClickTriggerV2_1" IncludeChildren="True" InformativeScreenshot="95080b30b229768baeb48638e19a9627" KeyModifiers="None" MouseButton="BTN_LEFT" Selector="[&quot;&lt;html app='msedge.exe' title='RPA Test Automation - &quot;+out_QueueReference+&quot;' /&gt;&lt;webctrl tag='BUTTON'/&gt;&quot;]" TriggerMode="TriggerDown" />
         </scg:List>
       </ui:TriggerScope.Triggers>
     </ui:TriggerScope>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[uiElementSource.Get(&quot;innertext&quot;).ToString]" sap:VirtualizedContainerService.HintSize="497,318" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[uiElementSource.Get(&quot;innertext&quot;).ToString]" sap:VirtualizedContainerService.HintSize="497.333333333333,164.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="Execute Test Scripts" DisplayName="Invoke InitAllApplications_ExtractTestsForQueueing workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Subprocesses\InitAllApplications_ExtractTestsForQueueing.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
@@ -158,6 +158,6 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Switch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;InitAllApplications.xaml was completed.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message &quot;InitAllApplications.xaml was completed.&quot;" sap:VirtualizedContainerService.HintSize="497.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;InitAllApplications.xaml was completed.&quot;]" />
   </Sequence>
 </Activity>

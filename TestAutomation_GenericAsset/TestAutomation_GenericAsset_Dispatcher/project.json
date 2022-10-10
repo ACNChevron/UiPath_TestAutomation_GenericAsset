@@ -5,14 +5,13 @@
   "dependencies": {
     "UiPath.Excel.Activities": "[2.9.5]",
     "UiPath.System.Activities": "[20.10.4]",
-    "UiPath.UIAutomation.Activities": "[20.10.10]",
-    "UiPath.Word.Activities": "[1.10.1]"
+    "UiPath.UIAutomation.Activities": "[20.10.10]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.10.8.0",
-  "projectVersion": "1.0.15",
+  "projectVersion": "1.0.17",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,

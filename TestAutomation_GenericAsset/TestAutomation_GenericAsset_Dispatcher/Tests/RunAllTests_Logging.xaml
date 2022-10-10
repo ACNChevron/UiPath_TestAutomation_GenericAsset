@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>546,404</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>678,545.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RunAllTests_Logging_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -61,15 +61,22 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Log the result of running the test, based on the type of test and its outcome." DisplayName="Run All Tests - Logging" sap:VirtualizedContainerService.HintSize="526,344" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap2010:Annotation.AnnotationText="Log the result of running the test, based on the type of test and its outcome." DisplayName="Run All Tests - Logging" sap:VirtualizedContainerService.HintSize="526,480.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message &quot;RunAllTests_Logging.xaml was invoked.&quot;" sap:VirtualizedContainerService.HintSize="484,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;RunAllTests_Logging.xaml was invoked.&quot;]" />
     <If Condition="[in_ExpectedOutcome = in_ActualOutcome]" DisplayName="If outcome is the expected one" sap:VirtualizedContainerService.HintSize="484,223.333333333333" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -93,7 +100,7 @@
               <InArgument x:TypeArguments="x:Int32">[io_PassedTestsCounter+1]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:AppendLine DisplayName="Append line (Pass)" FileName="[in_TestLogFile]" sap:VirtualizedContainerService.HintSize="334,134.666666666667" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[Now.ToString(&quot;hh:mm:ss tt&quot;)+vbTab+&quot;Test &quot;+in_TestCounter.ToString+&quot; PASS  ---&gt; &quot;+in_WorkflowFilename]" />
+          <ui:AppendLine DisplayName="Append line (Pass)" FileName="[in_TestLogFile]" sap:VirtualizedContainerService.HintSize="334,134.666666666667" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[Now.ToString(&quot;hh:mm:ss tt&quot;)+vbTab+&quot;Test &quot;+in_TestCounter.ToString+&quot; PASS  ---&gt; &quot;+in_WorkflowFilename]" UseDefaultEncoding="False" />
           <Assign DisplayName="Assign (Test Pass status)" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
@@ -120,7 +127,7 @@
               <InArgument x:TypeArguments="x:Int32">[io_FailedTestsCounter+1]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:AppendLine DisplayName="Append line (Fail)" FileName="[in_TestLogFile]" sap:VirtualizedContainerService.HintSize="496.666666666667,134.666666666667" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[Now.ToString(&quot;hh:mm:ss tt&quot;)+vbTab+&quot;Test &quot;+in_TestCounter.ToString+&quot; FAIL  ---&gt; &quot;+in_WorkflowFilename+&quot; ---&gt; &quot;+in_ExpectedOutcome.ToString]" />
+          <ui:AppendLine DisplayName="Append line (Fail)" FileName="[in_TestLogFile]" sap:VirtualizedContainerService.HintSize="496.666666666667,134.666666666667" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[Now.ToString(&quot;hh:mm:ss tt&quot;)+vbTab+&quot;Test &quot;+in_TestCounter.ToString+&quot; FAIL  ---&gt; &quot;+in_WorkflowFilename+&quot; ---&gt; &quot;+in_ExpectedOutcome.ToString]" UseDefaultEncoding="False" />
           <Assign DisplayName="Assign (Test Fail status)" sap:VirtualizedContainerService.HintSize="496.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>

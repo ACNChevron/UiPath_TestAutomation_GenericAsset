@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>623.333333333333,5964</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>678,5628</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InitAllApplications_BuildUserInterface_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -70,15 +70,12 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InitAllApplications_BuildUserInterface" sap:VirtualizedContainerService.HintSize="633.333333333333,5899.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InitAllApplications_BuildUserInterface" sap:VirtualizedContainerService.HintSize="633.333333333333,5563.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strHTML" />
       <Variable x:TypeArguments="x:String" Name="strReadHTMLFile" />
-      <Variable x:TypeArguments="s:String[]" Name="arrFile" />
-      <Variable x:TypeArguments="s:String[]" Name="arrDirectory" />
       <Variable x:TypeArguments="s:String[]" Name="arrSplitDirectory" />
       <Variable x:TypeArguments="x:Int32" Name="intUpperBound_SplitDirectory" />
     </Sequence.Variables>
@@ -105,7 +102,7 @@
         </ui:InvokeWorkflowFile>
       </If.Then>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="591.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;InitAllApplications_BuildUserInterface.xaml was invoked.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message &quot;InitAllApplications_BuildUserInterface.xaml was invoked.&quot;" sap:VirtualizedContainerService.HintSize="591.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;InitAllApplications_BuildUserInterface.xaml was invoked.&quot;]" />
     <ui:ReadTextFile Content="[strReadHTMLFile]" DisplayName="Read Text File 'HTML_Opening'" FileName="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\HTML_Opening.txt&quot;]" sap:VirtualizedContainerService.HintSize="591.333333333333,80.6666666666667" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
     <Assign DisplayName="Append 'HTML_Opening'" sap:VirtualizedContainerService.HintSize="591.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
@@ -195,100 +192,7 @@
         <InArgument x:TypeArguments="x:String">[strHTML+strReadHTMLFile]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out 'Sep 30, 2022'" sap:VirtualizedContainerService.HintSize="591.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="541.333333333333,1528" sap2010:WorkflowViewState.IdRef="Sequence_10">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:ReadTextFile Content="[strReadHTMLFile]" DisplayName="Read Text File 'Table_All Tests_Opening'" FileName="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\Table_All Tests_Opening.txt&quot;]" sap:VirtualizedContainerService.HintSize="499.333333333333,80.6666666666667" sap2010:WorkflowViewState.IdRef="ReadTextFile_11" />
-          <Assign DisplayName="Append 'Table_All Tests_Opening'" sap:VirtualizedContainerService.HintSize="499.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_11">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[strHTML+strReadHTMLFile]</InArgument>
-            </Assign.Value>
-          </Assign>
-          <ui:ReadTextFile Content="[strReadHTMLFile]" DisplayName="Read Text File 'Table_All Tests_Table Header'" FileName="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\Table_All Tests_Table Header.txt&quot;]" sap:VirtualizedContainerService.HintSize="499.333333333333,80.6666666666667" sap2010:WorkflowViewState.IdRef="ReadTextFile_12" />
-          <Assign DisplayName="Append 'Table_All Tests_Table Header'" sap:VirtualizedContainerService.HintSize="499.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_12">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[strHTML+strReadHTMLFile]</InArgument>
-            </Assign.Value>
-          </Assign>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each dir in Folder Location_All Tests_Table Data" sap:VirtualizedContainerService.HintSize="499.333333333333,545.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Directory.GetDirectories(in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\Table_All Tests_Table Data&quot;)]">
-            <ui:ForEach.Body>
-              <ActivityAction x:TypeArguments="x:String">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="x:String" Name="dir" />
-                </ActivityAction.Argument>
-                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each file in Module folder of Table Data" sap:VirtualizedContainerService.HintSize="462.666666666667,410" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(dir)]">
-                  <ui:ForEach.Body>
-                    <ActivityAction x:TypeArguments="x:String">
-                      <ActivityAction.Argument>
-                        <DelegateInArgument x:TypeArguments="x:String" Name="file" />
-                      </ActivityAction.Argument>
-                      <Sequence DisplayName="Body 'For Each file in Module folder of Table Data'" sap:VirtualizedContainerService.HintSize="426,274.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:ReadTextFile Content="[strReadHTMLFile]" DisplayName="Read Text File 'Table Data'" FileName="[file]" sap:VirtualizedContainerService.HintSize="384,80.6666666666667" sap2010:WorkflowViewState.IdRef="ReadTextFile_15" />
-                        <Assign DisplayName="Append 'Table_All Tests_Table Data'" sap:VirtualizedContainerService.HintSize="384,62" sap2010:WorkflowViewState.IdRef="Assign_18">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">[strHTML+strReadHTMLFile]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                      </Sequence>
-                    </ActivityAction>
-                  </ui:ForEach.Body>
-                </ui:ForEach>
-              </ActivityAction>
-            </ui:ForEach.Body>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:ForEach>
-          <ui:ReadTextFile Content="[strReadHTMLFile]" DisplayName="Read Text File 'Table_All Tests_Closing'" FileName="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\Table_All Tests_Closing.txt&quot;]" sap:VirtualizedContainerService.HintSize="499.333333333333,80.6666666666667" sap2010:WorkflowViewState.IdRef="ReadTextFile_16" />
-          <Assign DisplayName="Append 'Table_All Tests_Closing'" sap:VirtualizedContainerService.HintSize="499.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_14">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[strHTML+strReadHTMLFile]</InArgument>
-            </Assign.Value>
-          </Assign>
-          <ui:ReadTextFile Content="[strReadHTMLFile]" DisplayName="Read Text File 'Article_All Tests_Closing'" FileName="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\Article_All Tests_Closing.txt&quot;]" sap:VirtualizedContainerService.HintSize="499.333333333333,80.6666666666667" sap2010:WorkflowViewState.IdRef="ReadTextFile_17" />
-          <Assign DisplayName="Append 'Article_All Tests_Closing'" sap:VirtualizedContainerService.HintSize="499.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_19">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[strHTML+strReadHTMLFile]</InArgument>
-            </Assign.Value>
-          </Assign>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each folder in Folder Location_All Tests_Table Data" sap:VirtualizedContainerService.HintSize="541.333333333333,1160.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Directory.GetDirectories(in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;Table_All Tests_Table Data&quot;)]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each dir in Directory.GetDirectories(in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;Table_All Tests_Table Data&quot;)" sap:VirtualizedContainerService.HintSize="591.333333333333,1160.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Directory.GetDirectories(in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;Table_All Tests_Table Data&quot;)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -303,7 +207,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign 'intUpperBound_SplitDirectory'" sap:VirtualizedContainerService.HintSize="462.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_28">
+            <Assign DisplayName="Assign 'arrSplitDirectory'" sap:VirtualizedContainerService.HintSize="462.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_28">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:String[]">[arrSplitDirectory]</OutArgument>
               </Assign.To>
@@ -327,7 +231,7 @@
                 <InArgument x:TypeArguments="x:String">[arrSplitDirectory(intUpperBound_SplitDirectory)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Assign 'strHTML'" sap:VirtualizedContainerService.HintSize="462.666666666667,65.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_30">
+            <Assign DisplayName="Assign 'strHTML Article_Execution Tests'" sap:VirtualizedContainerService.HintSize="462.666666666667,65.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_30">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
               </Assign.To>
@@ -463,7 +367,7 @@
         <InArgument x:TypeArguments="x:String">[strHTML+strReadHTMLFile]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:WriteTextFile DisplayName="Write Text File" FileName="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\UserInterface.html&quot;]" sap:VirtualizedContainerService.HintSize="591.333333333333,135.333333333333" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strHTML]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="591.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;InitAllApplications_BuildUserInterface.xaml was completed.&quot;]" />
+    <ui:WriteTextFile DisplayName="Write Text File 'in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\UserInterface.html&quot;'" FileName="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\UserInterface.html&quot;]" sap:VirtualizedContainerService.HintSize="591.333333333333,135.333333333333" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strHTML]" />
+    <ui:LogMessage DisplayName="Log Message &quot;InitAllApplications_BuildUserInterface.xaml was completed.&quot;" sap:VirtualizedContainerService.HintSize="591.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;InitAllApplications_BuildUserInterface.xaml was completed.&quot;]" />
   </Sequence>
 </Activity>

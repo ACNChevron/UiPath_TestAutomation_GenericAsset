@@ -10,10 +10,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>599.333333333333,2246</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>678,2266</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InitAllApplications_AddTest_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="42">
+    <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -40,7 +40,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="26">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -68,19 +68,20 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InitAllApplications_AddTest" sap:VirtualizedContainerService.HintSize="476,2181.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InitAllApplications_AddTest" sap:VirtualizedContainerService.HintSize="476,2201.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strTestName" />
       <Variable x:TypeArguments="x:String" Name="strTestModule" />
       <Variable x:TypeArguments="x:String" Name="strHTML" />
       <Variable x:TypeArguments="x:String" Name="strTestID" />
+      <Variable x:TypeArguments="ui:Browser" Name="output_UiBrowser" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;InitAllApplications_AddTest.xaml was invoked.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message &quot;InitAllApplications_AddTest.xaml was invoked.&quot;" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;InitAllApplications_AddTest.xaml was invoked.&quot;]" />
     <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="text" DisplayName="Get Attribute 'TestName'" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
       <ui:GetAttribute.Result>
         <OutArgument x:TypeArguments="x:String">[strTestName]</OutArgument>
@@ -111,7 +112,7 @@
         </ui:Target>
       </ui:GetAttribute.Target>
     </ui:GetAttribute>
-    <Assign DisplayName="Assign 'strTestID'" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign 'strTestID'" sap:VirtualizedContainerService.HintSize="434,62" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strTestID]</OutArgument>
       </Assign.To>
@@ -119,7 +120,7 @@
         <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyyMMddHHmmss")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign 'strHTML'" sap:VirtualizedContainerService.HintSize="434,64" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign DisplayName="Assign 'strHTML Table Row Opening'" sap:VirtualizedContainerService.HintSize="434,65.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -128,7 +129,7 @@
 "          &lt;tr&gt;"+vbNewLine]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign 'strHTML'" sap:VirtualizedContainerService.HintSize="434,64" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign DisplayName="Assign 'strHTML Table Data Checkbox'" sap:VirtualizedContainerService.HintSize="434,65.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -137,7 +138,7 @@
 "            &lt;td&gt;&lt;input type='checkbox' class='checkboxTable' name='checkbox_ExecuteTests' value='"+strTestID+"' onclick='countSelectedTests(this.value);'/&gt;    &amp;nbsp;   &lt;/td&gt;"+vbNewLine]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign 'strHTML'" sap:VirtualizedContainerService.HintSize="434,64" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign DisplayName="Assign 'strHTML Test Name'" sap:VirtualizedContainerService.HintSize="434,65.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -146,7 +147,7 @@
 "            &lt;td id='tdTestName_"+strTestID+"' class='tdTestName'&gt;"+strTestName+"&lt;/td&gt;"+vbNewLine]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign 'strHTML'" sap:VirtualizedContainerService.HintSize="434,64" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign DisplayName="Assign 'strHTML Test Module'" sap:VirtualizedContainerService.HintSize="434,65.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -155,7 +156,7 @@
 "            &lt;td id='tdTestModule_"+strTestID+"' class='tdTestModule'&gt;"+strTestModule+"&lt;/td&gt;"+vbNewLine]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign 'strHTML'" sap:VirtualizedContainerService.HintSize="434,64" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign DisplayName="Assign 'strHTML Execution Status'" sap:VirtualizedContainerService.HintSize="434,65.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -164,7 +165,7 @@
 "            &lt;td id='tdExecutionStatus_"+strTestID+"' class='tdExecutionStatus' style='color:gray'&gt;&lt;b&gt;Not Started&lt;/b&gt;&lt;/td&gt;"+vbNewLine]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign 'strHTML'" sap:VirtualizedContainerService.HintSize="434,64" sap2010:WorkflowViewState.IdRef="Assign_8">
+    <Assign DisplayName="Assign 'strHTML Execution Start'" sap:VirtualizedContainerService.HintSize="434,65.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -173,7 +174,7 @@
 "            &lt;td id='tdExecutionStart_"+strTestID+"' class='tdExecutionStart'&gt;N/A&lt;/td&gt;"+vbNewLine]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign 'strHTML'" sap:VirtualizedContainerService.HintSize="434,64" sap2010:WorkflowViewState.IdRef="Assign_9">
+    <Assign DisplayName="Assign 'strHTML Execution End'" sap:VirtualizedContainerService.HintSize="434,65.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_9">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -182,7 +183,7 @@
 "            &lt;td id='tdExecutionEnd_"+strTestID+"' class='tdExecutionEnd'&gt;N/A&lt;/td&gt;"+vbNewLine]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign 'strHTML'" sap:VirtualizedContainerService.HintSize="434,64" sap2010:WorkflowViewState.IdRef="Assign_10">
+    <Assign DisplayName="Assign 'strHTML Screenshots'" sap:VirtualizedContainerService.HintSize="434,65.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -200,14 +201,14 @@
 "          &lt;/tr&gt;"+vbNewLine]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:WriteTextFile DisplayName="Write Text File" FileName="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\Table_Execute Tests_Table Data&quot;+&quot;\&quot;+strTestModule+&quot;\&quot;+strTestName+&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="434,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strHTML]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'RPA Test Automation'" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="43d2e1ccb589b52fc8a4ed5f47cd98d0" Selector="&lt;html app='msedge.exe' title='RPA Test Automation - {{in_QueueReference}}' /&gt;">
+    <ui:WriteTextFile DisplayName="Write Text File 'in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\Table_Execute Tests_Table Data&quot;+&quot;\&quot;+strTestModule+&quot;\&quot;+strTestName+&quot;.txt&quot;'" FileName="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\Table_Execute Tests_Table Data&quot;+&quot;\&quot;+strTestModule+&quot;\&quot;+strTestName+&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="434,135.333333333333" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strHTML]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'RPA Test Automation'" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="43d2e1ccb589b52fc8a4ed5f47cd98d0" Selector="&lt;html app='msedge.exe' title='RPA Test Automation - {{in_QueueReference}}' /&gt;" UiBrowser="[output_UiBrowser]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+          <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab 'RPA Test Automation'" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
         </ActivityAction>
       </ui:BrowserScope.Body>
     </ui:BrowserScope>
@@ -219,6 +220,6 @@
         <InArgument x:TypeArguments="x:Boolean">True</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;InitAllApplications_AddTest.xaml was completed.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message &quot;InitAllApplications_AddTest.xaml was completed.&quot;" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;InitAllApplications_AddTest.xaml was completed.&quot;]" />
   </Sequence>
 </Activity>

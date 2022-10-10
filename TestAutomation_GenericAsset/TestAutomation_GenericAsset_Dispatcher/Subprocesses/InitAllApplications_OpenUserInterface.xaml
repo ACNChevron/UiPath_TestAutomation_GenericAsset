@@ -1,14 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="InitAllApplications_OpenUserInterface" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="InitAllApplications_OpenUserInterface" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1073,645</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>678,550.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InitAllApplications_OpenUserInterface_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="24">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -33,10 +33,10 @@
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="26">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -63,16 +63,19 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InitAllApplications_OpenUserInterface" sap:VirtualizedContainerService.HintSize="509,477" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InitAllApplications_OpenUserInterface" sap:VirtualizedContainerService.HintSize="508.666666666667,486" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:Browser" Name="output_UiBrowser" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="467,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;InitAllApplications_OpenUserInterface.xaml was invoked.&quot;]" />
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser 'User Interface'" sap:VirtualizedContainerService.HintSize="467,123" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\UserInterface.html&quot;]">
+    <ui:LogMessage DisplayName="Log Message &quot;InitAllApplications_OpenUserInterface.xaml was invoked.&quot;" sap:VirtualizedContainerService.HintSize="466.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;InitAllApplications_OpenUserInterface.xaml was invoked.&quot;]" />
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Browser 'User Interface'" sap:VirtualizedContainerService.HintSize="466.666666666667,124.666666666667" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[output_UiBrowser]" Url="[in_Config(&quot;FolderLocation_UserInterface&quot;).ToString+&quot;\UserInterface.html&quot;]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -82,6 +85,6 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="467,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;InitAllApplications_OpenUserInterface.xaml was completed.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message &quot;InitAllApplications_OpenUserInterface.xaml was completed.&quot;" sap:VirtualizedContainerService.HintSize="466.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;InitAllApplications_OpenUserInterface.xaml was completed.&quot;]" />
   </Sequence>
 </Activity>
